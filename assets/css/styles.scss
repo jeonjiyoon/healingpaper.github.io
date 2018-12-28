@@ -1,0 +1,17 @@
+---
+---
+@import "main"; // this tells Sass to look for a file called main.scss in the sass directory (_sass/)
+
+.post-list {
+  .post {
+    margin-bottom: 0;
+    padding: 30px 0;
+    border-bottom: 1px solid #e8e8e8;
+    &:first-of-type {
+      padding-top: 0;
+    }
+    &:last-of-type {
+      border-bottom: none;
+    }
+  }
+}

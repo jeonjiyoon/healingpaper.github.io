@@ -1,0 +1,23 @@
+---
+layout: default
+---
+<!--포스트 리스트 (역순으로 정렬)-->
+<div class="home">
+    {% if site.posts.size > 0 %}
+    <ul class="post-list">
+        {% for post in site.posts reversed %}
+        <li class="post">
+            {{ post.date | date: "%m월 %d일, %Y" }}, {{ post.author }}
+            <h1>
+                <a class="post-link" href="{{ post.url | relative_url }}">
+                    {{ post.title | escape }}
+                </a>
+            </h1>
+            {{ post.excerpt | truncate: 100}}
+        </li>
+        {% endfor %}
+    </ul>
+
+    <!--<p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | relative_url }}">via RSS</a></p>-->
+    {% endif %}
+</div>
