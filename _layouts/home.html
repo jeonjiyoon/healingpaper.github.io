@@ -7,13 +7,18 @@ layout: default
     <ul class="post-list">
         {% for post in site.posts reversed %}
         <li class="post">
-            {{ post.date | date: "%m월 %d일, %Y" }}, {{ post.author }}
+            <div class="post-top">{{ post.date | date: "%m월 %d일, %Y" }}, {{ post.author }}</div>
             <h1>
                 <a class="post-link" href="{{ post.url | relative_url }}">
                     {{ post.title | escape }}
                 </a>
             </h1>
-            {{ post.excerpt | truncate: 100}}
+            <div class="post-excerpt">{{ post.excerpt | truncate: 100}}</div>
+            <div>
+                {% for tag in post.tags %}
+                <span class="tag">{{ tag }}</span>
+                {% endfor %}
+            </div>
         </li>
         {% endfor %}
     </ul>
