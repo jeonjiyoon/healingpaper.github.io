@@ -40,3 +40,32 @@
   font-size: 12px;
   font-weight: bold;
 }
+
+/////// header ///////
+#custom-site-header {
+  border-bottom: 1px solid #e8e8e8;
+  min-height: 55.95px;
+  position: relative;
+  background-color: #ffffff;
+  .hp-logo {
+    width: 220px;
+    padding: 40px 0;
+  }
+  //The sticky class is added to the header with JS when it reaches its scroll position
+  &.sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+  }
+}
+// TODO 페이지를 스크롤 다운할때 컨텐츠가 아래로 가도록.
+//.sticky + .page-content {
+//  &.custom-page-content {
+//    padding-top: 200px;
+//  }
+//}
+
+/////// footer ///////
+.u-email {
+  color: #828282;
+}
