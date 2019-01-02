@@ -32,9 +32,9 @@
 </header>
 
 <script>
-  // When the user scrolls the page, execute myFunction
+  // When the user scrolls the page, execute addStickyClass
   window.onscroll = function() {
-    myFunction()
+    // addStickyClass() 190102 임시제거
   };
 
   // Get the header
@@ -44,7 +44,7 @@
   var sticky = header.offsetTop;
 
   // Add the sticky class to the header when you reach its scroll position. Remove "sticky" when you leave the scroll position
-  function myFunction() {
+  function addStickyClass() {
     console.log(window.pageYOffset, sticky, window.pageYOffset > sticky)
     if (window.pageYOffset > sticky) {
       header.classList.add("sticky");
