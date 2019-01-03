@@ -1,7 +1,6 @@
 ---
 layout: post
 title:  "Welcome to Jekyll!"
-date: 2018-12-28 14:57:03 +0900
 categories: [jekyll, update]
 tags: [hot, summer]
 author: Welin Hong

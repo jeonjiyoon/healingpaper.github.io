@@ -1,7 +1,6 @@
 ---
 layout: post
 title:  "두번째 포스트!"
-date: 2018-12-28 14:57:03 +0900
 categories: [jekyll, update]
 tags: [hot, summer]
 author: Welin Hong
