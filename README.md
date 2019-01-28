@@ -16,3 +16,12 @@
     
     [ 작성할 내용 ]
     </code></pre>
+
+### TODO
+[] 카테고리 layout
+
+[x] 상세페이지에 댓글 추가
+
+[] author
+
+[] mobile responsive
