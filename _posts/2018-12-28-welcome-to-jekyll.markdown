@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Welcome to Jekyll!"
-categories: [jekyll, update]
+categories: [Android]
 tags: [hot, summer]
 author: Welin Hong
 ---

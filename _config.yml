@@ -44,6 +44,10 @@ plugins:
 collections:
   authors:
     output: true
+    permalink: /:collection/:name
+  category:
+    output: true
+    permalink: /:collection/:name
 
 defaults:
   - scope:
@@ -58,5 +62,12 @@ defaults:
       layout: "post"
   - scope:
       path: ""
+      type: "category"
+    values:
+      layout: "category"
+  - scope:
+      path: ""
     values:
       layout: "default"
+
+#permalink: /:categories/:year/:month/:day/:title:output_ext
