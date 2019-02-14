@@ -96,3 +96,27 @@
   margin-bottom: 40px;
 }
 
+/////// Author ///////
+.author-description {
+  display: flex;
+  flex-flow: row;
+  align-items: center;
+  padding: 10px 0 10px 0;
+  margin-bottom: 10px;
+  .image {
+    width: 100px;
+    height: 100px;
+    margin-right: 1.2em;
+    border-radius: 50%;
+  }
+  .info {
+    .name {
+      display: inline-block;
+      margin: 0;
+      margin-right: 0.1em;
+    }
+    .position {
+      margin: 0;
+    }
+  }
+}
