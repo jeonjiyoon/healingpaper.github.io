@@ -5,10 +5,10 @@
 
 
 ### 글 작성
-- `_post` 디렉토리에 아래의 형식을 참고하여 `yyyy-mm-dd-slug.md 파일 추가
+- 글을 작성하기 전, `Notion > 기술 Blog Drafts`에 글을 작성하고 피드백을 받은 후 `_post` 디렉토리에 추가.
+- `_post` 디렉토리에 아래의 형식을 참고하여 `yyyy-mm-dd-slug.md 파일 작성
     - slug는 url의 일부로, 해당 포스트의 url은 `.../yyyy/mm/dd/slug`이 된다.
     <pre><code>
-    layout: post
     title:  "자바스크립트란"
     categories: [web]
     tags: [javascript, object]
@@ -16,12 +16,4 @@
     
     [ 작성할 내용 ]
     </code></pre>
-
-### TODO
-[] 카테고리 layout
-
-[x] 상세페이지에 댓글 추가
-
-[] author
-
-[] mobile responsive
+   
