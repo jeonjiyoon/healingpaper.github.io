@@ -2,6 +2,43 @@
 ---
 @import "main"; // this tells Sass to look for a file called main.scss in the sass directory (_sass/)
 
+.custom-site-header .wrapper {
+  padding: 40px 15px;
+}
+.wrapper .site-nav {
+  display: none;
+  border: none;
+}
+.home .home-sidebar {
+  display: block;
+}
+@media screen and (max-width: 600px) {
+  .custom-site-header .wrapper {
+    padding: 0px 15px;
+    .site-nav {
+      display: block;
+      position: unset;
+      padding: 10px 0;
+      .trigger {
+        position: absolute;
+        top: 57px;
+        right: 0;
+        width: 100%;
+        text-align: center;
+        background: #fff;
+        border: 1px solid #e8e8e8;
+        .page-link {
+          margin: 0;
+          padding: 10px;
+        }
+      }
+    }
+  }
+  .custom-page-content .home .home-sidebar {
+    display: none;
+  }
+}
+
 .post-list {
   .post {
     margin-bottom: 0;
@@ -42,14 +79,14 @@
 }
 
 /////// header ///////
-#custom-site-header {
+.custom-site-header {
   border-bottom: 1px solid #e8e8e8;
   min-height: 55.95px;
   position: relative;
   background-color: #ffffff;
   .hp-logo {
     width: 220px;
-    padding: 40px 0;
+    //padding: 40px 0;
   }
   //The sticky class is added to the header with JS when it reaches its scroll position
   &.sticky {
@@ -111,7 +148,6 @@
   }
   .info {
     .name {
-      display: inline-block;
       margin: 0;
       margin-right: 0.1em;
     }
