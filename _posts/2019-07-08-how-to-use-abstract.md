@@ -152,13 +152,13 @@ author: Jane Jeon
 
 ------
 
-[Guide 1. Master에서 1개의 Branch 생성 후 Merge하기](/_posts/2019-07-08-abstract-guide.md)
+<a href="https://healingpaper.github.io/design/2019/07/08/abstract-guide.html#guide1" target="blank">Guide 1. Master에서 1개의 Branch 생성 후 Merge하기</a>
 
-[Guide 2. 2개 이상의 Branch 생성 후 Update from Master 사용하기](./Guide-2-2-Branch-Update-from-Master-b77a29ca-2a95-4788-8ce6-c7815da8e332.md)
+<a href="https://healingpaper.github.io/design/2019/07/08/abstract-guide.html#guide2" target="blank">Guide 2. 2개 이상의 Branch 생성 후 Update from Master 사용하기</a>
 
-[Guide 3. Branch 중첩으로 생성하고 Archive 기능 활용하기](./Guide-3-Branch-Archive-a79d74da-ba13-4791-9ee0-59c4972c9bbb.md)
+<a href="https://healingpaper.github.io/design/2019/07/08/abstract-guide.html#guide3" target="blank">Guide 3. Branch 중첩으로 생성하고. Archive 기능 활용하기</a>
 
-[Guide 4. Library 기능 활용하기](./Guide-4-Library-90d6cd2b-e11d-4327-93c3-9f1cbdc0dfb0.md)
+<a href="https://healingpaper.github.io/design/2019/07/08/abstract-guide.html#guide4" target="blank">Guide 4. Library 기능 활용하기</a>
 
 ![img_main1](/assets/images/jane/abstract/main/img_main1.png)
 
