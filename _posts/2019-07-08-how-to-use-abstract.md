@@ -14,7 +14,7 @@ author: Jane Jeon
 
 저는 이전에 Abstract를 얕게 사용했었던 유저였는데요, 이전에 Abstract를 사용할 당시에는 디자인 시스템이 구축되지 않은 상태였고, 단지 파일의 버전 관리의 목적이 전부였습니다. 때문에 Abstract의 강력한 기능을 활용하는 법을 제대로 몰랐었고, 그동안 뭔가 알 듯하면서도 헷갈렸던 기능이 꽤나 많았습니다.*(이번에 Abstract를 제대로 도입하면서 알게된 기능이 많았어요.)* 이번 글을 통해 저와 같이 헤맸었던(?) 경험이 있었던 분, 그리고 팀 내에 앱스트랙트 도입을 고려 중인 분에게도 도움이 되길 바라봅니다!
 
-
+​    
 
 ### 왜 Abstract를 도입했나요?
 
@@ -24,9 +24,9 @@ author: Jane Jeon
 
 때문에 스케치 파일의 히스토리 관리 및 파일 공유를 효율적으로 운용할 수 있게 도와주는 Abstract를 도입해 앞으로 더 많은 디자이너와 협업할 수 있도록 기반을 다지고, 시행착오를 거치면서 지금보다 더 좋은 방식을 찾아내려고 합니다.
 
+  
 
-
-
+  
 
 ### 👍 먼저 Abstract의 강점에 대해 알아봅시다.
 
@@ -52,7 +52,9 @@ author: Jane Jeon
 
   Abstract 자체가 스케치 파일의 공유 서버의 역할을 하기 때문에 인터넷만 된다면 어디서든 접근이 편리해집니다.
 
+  
 
+  
 
 ### 📝 기본 용어 설명
 
@@ -86,7 +88,7 @@ author: Jane Jeon
 
   해당 Commit의 지점으로 되돌리고 싶을 때, Branch의 Commit 리스트를 눌러보면 우측에 시계 아이콘을 눌러 원복할 수 있습니다.
 
-  ![](/Users/jiyoonjeon/Downloads/Export-fb7183f3-1aaf-42a5-80c8-5309a476b693/Untitled-e7fbd9c6-4c85-4796-a4f0-54c4b071e544.png)
+  ![img_retorecommit](/Users/jiyoonjeon/Desktop/healingpaper.github.io/assets/images/jane/abstract/main/img_retorecommit.png)
 
 - **Merge**
 
@@ -100,11 +102,11 @@ author: Jane Jeon
 
   동일한 파일을 수정하고 Merge하게 될 때 충돌이 나는 경우가 발생합니다. 이 때 Resolve Confilcts 기능을 통해 충돌이 난 페이지를 확인하고 어떤 파일을 Master로 할 지 선택할 수 있습니다.
 
-  ![](/Users/jiyoonjeon/Downloads/Export-fb7183f3-1aaf-42a5-80c8-5309a476b693/Untitled-aa4421fe-e538-45d8-93f9-60440958bb31.png)
+  ![img_guide2-3](/Users/jiyoonjeon/Desktop/healingpaper.github.io/assets/images/jane/abstract/guide2/img_guide2-3.png)
 
   Merge 할 당시 충돌이 날 경우 등장하는 Resolve Confilcts 페이지
 
-  
+    
 
 - **Open Untracked**
 
@@ -114,17 +116,17 @@ author: Jane Jeon
 
   (해당 기능을 활용해 파일을 열게되면 Commit을 할 수 없으니 주의해주세요. 가끔 Untracked로 열었다가 한참 수정한 뒤에 깨닫게 되면 다시 Branch파일에 옮기는 작업이 필요할 수 있어요..!)
 
-  ![](/Users/jiyoonjeon/Downloads/Export-fb7183f3-1aaf-42a5-80c8-5309a476b693/Untitled-86c72d20-fb37-46a8-901c-674c4b3eb950.png)
+  ![img_untracked](/Users/jiyoonjeon/Desktop/healingpaper.github.io/assets/images/jane/abstract/main/img_untracked.png)
 
   Open Untracked로 스케치 파일을 열었을 때 하단 상태바
 
-  
+    
 
 - **Replace**
 
   많은 Commit 히스토리가 쌓여있는 시점에서 업로드한 파일을 교체하고 싶을 때, Replace 기능을 활용해 파일을 업로드하면 아래 히스토리는 그대로 유지되고, 파일을 교체할 수 있습니다.
 
-  ![](/Users/jiyoonjeon/Downloads/Export-fb7183f3-1aaf-42a5-80c8-5309a476b693/Untitled-fe6e6fe3-762e-461c-b5ea-0a4a67d95e34.png)
+  ![img_replace](/Users/jiyoonjeon/Desktop/healingpaper.github.io/assets/images/jane/abstract/main/img_replace.png)
 
 - **Update from master**
 
@@ -144,7 +146,9 @@ author: Jane Jeon
 
   Library 파일 또한 Master 파일을 가져다 사용하므로, 디자인 시스템의 버전 관리 및 적용을 효율적으로 할 수 있습니다.
 
+  
 
+  
 
 ### 📒 기본 사용법
 
@@ -158,7 +162,7 @@ author: Jane Jeon
 
 [Guide 4. Library 기능 활용하기](./Guide-4-Library-90d6cd2b-e11d-4327-93c3-9f1cbdc0dfb0.md)
 
-![](/Users/jiyoonjeon/Downloads/Export-fb7183f3-1aaf-42a5-80c8-5309a476b693/Untitled-ea1e167d-4fcd-494d-962f-89d38712bbdb.png)
+![img_main1](/Users/jiyoonjeon/Desktop/healingpaper.github.io/assets/images/jane/abstract/main/img_main1.png)
 
 앱스트랙트의 간단 구조도
 
@@ -172,18 +176,18 @@ author: Jane Jeon
 
 - 마스터 파일은 메뉴 단위별로 스케치 파일을 분리해 업로드합니다. (파일의 용량을 가볍게 유지하고, 충돌이 날 가능성을 낮춥니다.)
 
-![](/Users/jiyoonjeon/Downloads/Export-fb7183f3-1aaf-42a5-80c8-5309a476b693/Untitled-f39813ec-3c77-4551-9191-60f9d574d3ce.png)
+![img_main2](/Users/jiyoonjeon/Desktop/healingpaper.github.io/assets/images/jane/abstract/main/img_main2.png)
 
 마스터 파일 업로드 예시
 
 - 스케치 파일 내에서는 Draft 페이지를 따로 생성해 확정되지 않았지만 필요한 디자인 산출물들을 따로 빼서 앱스트랙트 화면의 혼란을 줄입니다.
 - 더불어 앱스트랙트는 스케치 파일의 레이어 순서대로 파일이 노출되므로 레이어 정렬을 하면 더 보기 좋습니다.
 
-![](/Users/jiyoonjeon/Downloads/Export-fb7183f3-1aaf-42a5-80c8-5309a476b693/Untitled-1cfc2ec3-423e-48d5-b251-d41b2809eeed.png)
+![img_main3](/Users/jiyoonjeon/Desktop/healingpaper.github.io/assets/images/jane/abstract/main/img_main3.png)
 
 스케치 파일 내 페이지 생성 예시
 
-
+  
 
 ### 2. Commit과 Merge의 체계화*(Commit은 자주, Merge는 확실할 때)*
 
@@ -211,11 +215,11 @@ author: Jane Jeon
 
 프로덕트의 일관된 디자인을 위해 디자인 시스템 파일을 업데이트할 수 있는 프로젝트를 따로 생성해 공통된 요소는 모두 Import - Override로 작업할 수 있게 환경을 만들어줍니다.
 
-![](/Users/jiyoonjeon/Downloads/Export-fb7183f3-1aaf-42a5-80c8-5309a476b693/Untitled-0ca0c7ce-0f53-4789-97ad-761b71336709.png)
+![img_main4](/Users/jiyoonjeon/Desktop/healingpaper.github.io/assets/images/jane/abstract/main/img_main4.png)
 
 심볼로 만들어 둔 컴포넌트 예시
 
-![](/Users/jiyoonjeon/Downloads/Export-fb7183f3-1aaf-42a5-80c8-5309a476b693/Untitled-9d370b78-a02e-4101-9c5c-fd0bd007e58e.png)
+![img_main5](/Users/jiyoonjeon/Desktop/healingpaper.github.io/assets/images/jane/abstract/main/img_main5.png)
 
 컬러 스타일 예시
 
