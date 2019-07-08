@@ -16,7 +16,7 @@ author: Jane Jeon
 
 ​    
 
-### 왜 Abstract를 도입했나요?
+### **왜 Abstract를 도입했나요?**
 
 ------
 
@@ -28,7 +28,7 @@ author: Jane Jeon
 
   
 
-### 👍 먼저 Abstract의 강점에 대해 알아봅시다.
+### **👍 먼저 Abstract의 강점에 대해 알아봅시다.**
 
 ------
 
@@ -56,7 +56,7 @@ author: Jane Jeon
 
   
 
-### 📝 기본 용어 설명
+### **📝 기본 용어 설명**
 
 ------
 
@@ -78,7 +78,7 @@ author: Jane Jeon
 
 - **Commit**
 
-  Branch에서 업데이트된 내용을 '확정(Super Save)'하는 기능입니다.
+  Branch에서 업데이트된 내용을 '**확정(Super Save)**'하는 기능입니다.
 
   Commit을 하게되면 Branch의 업데이트 내용이 Commit 히스토리에 메세지와 함께 쌓이게 됩니다.
 
@@ -88,7 +88,7 @@ author: Jane Jeon
 
   해당 Commit의 지점으로 되돌리고 싶을 때, Branch의 Commit 리스트를 눌러보면 우측에 시계 아이콘을 눌러 원복할 수 있습니다.
 
-  ![img_retorecommit](/Users/jiyoonjeon/Desktop/healingpaper.github.io/assets/images/jane/abstract/main/img_retorecommit.png)
+  ![img_retorecommit](assets/images/jane/abstract/main/img_retorecommit.png)
 
 - **Merge**
 
@@ -102,7 +102,7 @@ author: Jane Jeon
 
   동일한 파일을 수정하고 Merge하게 될 때 충돌이 나는 경우가 발생합니다. 이 때 Resolve Confilcts 기능을 통해 충돌이 난 페이지를 확인하고 어떤 파일을 Master로 할 지 선택할 수 있습니다.
 
-  ![img_guide2-3](/Users/jiyoonjeon/Desktop/healingpaper.github.io/assets/images/jane/abstract/guide2/img_guide2-3.png)
+  ![img_guide2-3](assets/images/jane/abstract/guide2/img_guide2-3.png)
 
   Merge 할 당시 충돌이 날 경우 등장하는 Resolve Confilcts 페이지
 
@@ -116,7 +116,7 @@ author: Jane Jeon
 
   (해당 기능을 활용해 파일을 열게되면 Commit을 할 수 없으니 주의해주세요. 가끔 Untracked로 열었다가 한참 수정한 뒤에 깨닫게 되면 다시 Branch파일에 옮기는 작업이 필요할 수 있어요..!)
 
-  ![img_untracked](/Users/jiyoonjeon/Desktop/healingpaper.github.io/assets/images/jane/abstract/main/img_untracked.png)
+  ![img_untracked](assets/images/jane/abstract/main/img_untracked.png)
 
   Open Untracked로 스케치 파일을 열었을 때 하단 상태바
 
@@ -126,7 +126,7 @@ author: Jane Jeon
 
   많은 Commit 히스토리가 쌓여있는 시점에서 업로드한 파일을 교체하고 싶을 때, Replace 기능을 활용해 파일을 업로드하면 아래 히스토리는 그대로 유지되고, 파일을 교체할 수 있습니다.
 
-  ![img_replace](/Users/jiyoonjeon/Desktop/healingpaper.github.io/assets/images/jane/abstract/main/img_replace.png)
+  ![img_replace](assets/images/jane/abstract/main/img_replace.png)
 
 - **Update from master**
 
@@ -150,7 +150,7 @@ author: Jane Jeon
 
   
 
-### 📒 기본 사용법
+### **📒 기본 사용법**
 
 ------
 
@@ -162,34 +162,34 @@ author: Jane Jeon
 
 [Guide 4. Library 기능 활용하기](./Guide-4-Library-90d6cd2b-e11d-4327-93c3-9f1cbdc0dfb0.md)
 
-![img_main1](/Users/jiyoonjeon/Desktop/healingpaper.github.io/assets/images/jane/abstract/main/img_main1.png)
+![img_main1](assets/images/jane/abstract/main/img_main1.png)
 
 앱스트랙트의 간단 구조도
 
 
 
-### 🧐 힐페 디자인 챕터에서 앱스트랙트 똑똑하게 사용하는 방법!
+### **🧐 힐페 디자인 챕터에서 앱스트랙트 똑똑하게 사용하는 방법!**
 
-### 1. 스케치 파일 관리
+### **1. 스케치 파일 관리**
 
 ------
 
 - 마스터 파일은 메뉴 단위별로 스케치 파일을 분리해 업로드합니다. (파일의 용량을 가볍게 유지하고, 충돌이 날 가능성을 낮춥니다.)
 
-![img_main2](/Users/jiyoonjeon/Desktop/healingpaper.github.io/assets/images/jane/abstract/main/img_main2.png)
+![img_main2](assets/images/jane/abstract/main/img_main2.png)
 
 마스터 파일 업로드 예시
 
 - 스케치 파일 내에서는 Draft 페이지를 따로 생성해 확정되지 않았지만 필요한 디자인 산출물들을 따로 빼서 앱스트랙트 화면의 혼란을 줄입니다.
 - 더불어 앱스트랙트는 스케치 파일의 레이어 순서대로 파일이 노출되므로 레이어 정렬을 하면 더 보기 좋습니다.
 
-![img_main3](/Users/jiyoonjeon/Desktop/healingpaper.github.io/assets/images/jane/abstract/main/img_main3.png)
+![img_main3](assets/images/jane/abstract/main/img_main3.png)
 
 스케치 파일 내 페이지 생성 예시
 
   
 
-### 2. Commit과 Merge의 체계화*(Commit은 자주, Merge는 확실할 때)*
+### **2. Commit과 Merge의 체계화*(Commit은 자주, Merge는 확실할 때)***
 
 ------
 
@@ -209,17 +209,17 @@ author: Jane Jeon
 
   
 
-### 3. 라이브러리 활용을 통한 디자인 시스템 적용
+### **3. 라이브러리 활용을 통한 디자인 시스템 적용**
 
 ------
 
 프로덕트의 일관된 디자인을 위해 디자인 시스템 파일을 업데이트할 수 있는 프로젝트를 따로 생성해 공통된 요소는 모두 Import - Override로 작업할 수 있게 환경을 만들어줍니다.
 
-![img_main4](/Users/jiyoonjeon/Desktop/healingpaper.github.io/assets/images/jane/abstract/main/img_main4.png)
+![img_main4](assets/images/jane/abstract/main/img_main4.png)
 
 심볼로 만들어 둔 컴포넌트 예시
 
-![img_main5](/Users/jiyoonjeon/Desktop/healingpaper.github.io/assets/images/jane/abstract/main/img_main5.png)
+![img_main5](assets/images/jane/abstract/main/img_main5.png)
 
 컬러 스타일 예시
 
@@ -227,7 +227,7 @@ author: Jane Jeon
 
 
 
-### 🤓 추가로 알아두면 좋은 점들!
+### **🤓 추가로 알아두면 좋은 점들!**
 
 ------
 
@@ -251,7 +251,7 @@ author: Jane Jeon
 
      
 
-### 마치며
+### **마치며**
 
 ------
 
