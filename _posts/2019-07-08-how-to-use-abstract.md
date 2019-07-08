@@ -6,8 +6,6 @@ author: Jane Jeon
 
 ---
 
-# **Abstract Guide: 힐페 디자인챕터에서 Abstract 똑똑하게 사용하는 방법**
-
 안녕하세요. 힐링페이퍼의 프로덕트 디자이너 전지윤입니다.
 
 이번 글에서 힐페 디자인 챕터에서 Abstract를 어떻게 활용하고 있는 지를 기본 Abstract 사용법과 함께 공유하려고합니다.
