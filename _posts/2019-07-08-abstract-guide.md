@@ -12,7 +12,7 @@ author: Jane Jeon
 몇가지 케이스에 따라 기본 가이드를 작성해둔 것이니, Abstract를 처음 접하시는 분들은 아래 내용을 따라 테스트 작업을 해보시는 것을 추천드립니다. (참고로 2명 이상이 함께 테스트를 해보는 것이 Resolve Confilcts나 Review Request 등 다양한 상황을 경험하실 수 있어요.)
 
 <div id="guide1">
-  <h2>
+  <h2 style="font-weight: bold;">
     Guide 1. Master에서 1개의 Branch 생성 후 Merge하기
   </h2>
 </div>
@@ -55,7 +55,11 @@ author: Jane Jeon
 
 <hr>
 
-## **<div id="guide2">Guide 2. 2개 이상의 Branch 생성 후 Update from Master 사용하기**</div>
+<div id="guide2">
+  <h2 style="font-weight: bold;">
+    Guide 2. 2개 이상의 Branch 생성 후 Update from Master 사용하기
+  </h2>
+</div>
 
 ![img_guide2-1](/assets/images/jane/abstract/guide2/img_guide2-1.png)
 
@@ -87,7 +91,11 @@ author: Jane Jeon
 
 <hr>
 
-## **<div id="guide3">Guide 3. Branch 중첩으로 생성하고 Archive 기능 활용하기**</div>
+<div id="guide3">
+  <h2 style="font-weight: bold;">
+    Guide 3. Branch 중첩으로 생성하고 Archive 기능 활용하기
+  </h2>
+</div>
 
 ![img_guide3-1](/assets/images/jane/abstract/guide3/img_guide3-1.png)
 
@@ -110,7 +118,11 @@ Archived List 페이지 예시(해당 리스트의 더보기 버튼을 클릭하
 
 <hr>
 
-## **<div id="guide4">Guide 4. Library 기능 활용하기**</div>
+<div id="guide4">
+  <h2 style="font-weight: bold;">
+    Guide 4. Library 기능 활용하기
+  </h2>
+</div>
 
 *힐페 디자인챕터에서는 Library 기능을 디자인 시스템을 관리하고 적용하는 목적으로 사용하기 때문에 Library화 할 파일의 컴포넌트화는 사전에 작업된 것으로 전제합니다.
 
