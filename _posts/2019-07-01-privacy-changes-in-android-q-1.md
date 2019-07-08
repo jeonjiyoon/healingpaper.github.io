@@ -2,7 +2,7 @@
 layout: post
 title: Privacy Changes in Android Q#1
 categories: [Android]
-tags: [privacy change]
+tags: [privacy change, Android]
 author: David Ha
 ---
 ## Privacy Changes in Android Q#1
