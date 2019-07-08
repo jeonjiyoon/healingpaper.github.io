@@ -9,39 +9,28 @@ author: Jane Jeon
 
 <a href="https://healingpaper.github.io/design/2019/07/08/how-to-use-abstract.html" target="_blank">Abstract Guide: 힐페 디자인챕터에서 Abstract 똑똑하게 사용하는 방법</a> 에서 언급한 용어와 기본 사용법을 따로 글로 작성한 페이지입니다. 몇가지 케이스에 따라 기본 가이드를 작성해둔 것이니, Abstract를 처음 접하시는 분들은 아래 내용을 따라 테스트 작업을 해보시는 것을 추천드립니다. (참고로 2명 이상이 함께 테스트를 해보는 것이 Resolve Confilcts나 Review Request 등 다양한 상황을 경험하실 수 있어요.)
 
+  
+
+  
+
 ### **📝 기본 용어 설명**
 
 ------
 
 - **Master**: '진짜진짜 최종 파일'을 말하며, 각 프로젝트마다 Master 파일을 기준으로 디자인 파일의 버전 관리를 실행합니다.
-
 - **Branch**: Master 파일로부터 갈라진 일종의 평행우주 개념입니다. 단어 뜻 그대로 Master 파일에서 '가지를 치는' 기능으로 기존 스케치에서 Save As로 사본을 만드는 것과 유사합니다. Branch 파일을 만들면 Master 파일은 그대로 유지된 채로 생성한 Branch 파일에서 시안을 수정할 수 있습니다.
-
-- **Commit**: Branch에서 업데이트된 내용을 '**확정(Super Save)**'하는 기능입니다. Commit을 하게되면 Branch의 업데이트 내용이 Commit 히스토리에 메세지와 함께 쌓이게 됩니다.
-
+- **Commit**: Branch에서 업데이트된 내용을 '확정(Super Save)'하는 기능입니다. Commit을 하게되면 Branch의 업데이트 내용이 Commit 히스토리에 메세지와 함께 쌓이게 됩니다.
 - **Restore Commit**: 해당 Commit의 지점으로 되돌리고 싶을 때, Branch의 Commit 리스트를 눌러보면 우측에 시계 아이콘을 눌러 원복할 수 있습니다.
-
-  ![img_retorecommit]()
-
 - **Merge**: 생성한 여러개의 Branch 중 합의된 시안을 Merge하면 해당 Branch의 업데이트 내용이 Master 파일에 합쳐지게 됩니다.
-
 - **Archive**: 생성한 Branch 파일을 Master에 Merge하지 않지만 삭제하기에는 남겨둘 리소스들이 발생하는 경우가 생깁니다. 이 때 Archive 기능으로 파일을 보관했다가 필요할 때 다시 꺼내쓸 수 있는 기능입니다.
-
 - **Resolve Confilcts**: 동일한 파일을 수정하고 Merge하게 될 때 충돌이 나는 경우가 발생합니다. 이 때 Resolve Confilcts 기능을 통해 충돌이 난 페이지를 확인하고 어떤 파일을 Master로 할 지 선택할 수 있습니다.  
-
 - **Open Untracked**: Master 파일에도 영향을 받지 않고, Branch도 생성하지 않은 채로 파일을 열게 되는 방식입니다. 수정할 내용은 없으나 파일을 열어볼 필요가 있을 때 주로 사용하게 됩니다.  
-
 - **Replace**: 많은 Commit 히스토리가 쌓여있는 시점에서 업로드한 파일을 교체하고 싶을 때, Replace 기능을 활용해 파일을 업로드하면 아래 히스토리는 그대로 유지되고, 파일을 교체할 수 있습니다.
-
-  ![img_replace]()
-
 - **Update from master**: 다수의 Branch 중 1개의 Branch를 Master로 Merge했을 때, 이전에 생성한 Branch의 Master 또한 변경이 되므로 가장 최근의 Master 파일로 다시 업데이트하는 액션을 취하게 됩니다. 이 때 Update from master 기능을 실행하면 Commit을 통해 다른 Branch에서 업데이트한 내용을 추가할 수 있습니다.
-
 - **Collections**: 업로드한 시안을 Collection에 추가하면 무수히 많은 페이지 중 내가 보여주고 싶은 페이지만 정리해둘 수 있습니다.
-
 - **Library**: 파일을 Library 파일로 전환하면 타 프로젝트에서 해당 파일을 Import 할 수 있게 됩니다. 예를 들어 강남언니 서비스의 프로젝트가 AOS, iOS 용으로 각각 분리되어 있을 때, 두 파일에서 공통으로 가져다 쓸 디자인 시스템 파일을 Library 파일로 만들고 타 프로젝트에서 Link해 사용이 가능합니다. Library 파일 또한 Master 파일을 가져다 사용하므로, 디자인 시스템의 버전 관리 및 적용을 효율적으로 할 수 있습니다.
 
-
+  
 
   
 
