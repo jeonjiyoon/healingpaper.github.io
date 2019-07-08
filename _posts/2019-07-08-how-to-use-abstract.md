@@ -150,6 +150,8 @@ author: Jane Jeon
 
 ### **📒 기본 사용법**
 
+전체 맥락상 기본 사용법은 따로 페이지에서 소개해드리니 기본 사용법이 궁금하신 분들은 해당 링크를 참고해주세요🧐
+
 ------
 
 <a href="https://healingpaper.github.io/design/2019/07/08/abstract-guide.html#guide1" target="blank">Guide 1. Master에서 1개의 Branch 생성 후 Merge하기</a>
