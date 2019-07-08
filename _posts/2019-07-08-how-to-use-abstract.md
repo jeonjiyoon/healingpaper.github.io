@@ -152,7 +152,7 @@ author: Jane Jeon
 
 ------
 
-[Guide 1. Master에서 1개의 Branch 생성 후 Merge하기](./Guide-1-Master-1-Branch-Merge-1dace133-358f-46d7-8ba8-bcb34b24272a.md)
+[Guide 1. Master에서 1개의 Branch 생성 후 Merge하기](/_posts/2019-07-08-abstract-guide.md)
 
 [Guide 2. 2개 이상의 Branch 생성 후 Update from Master 사용하기](./Guide-2-2-Branch-Update-from-Master-b77a29ca-2a95-4788-8ce6-c7815da8e332.md)
 
