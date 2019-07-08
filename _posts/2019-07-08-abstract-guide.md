@@ -11,8 +11,11 @@ author: Jane Jeon
 
 몇가지 케이스에 따라 기본 가이드를 작성해둔 것이니, Abstract를 처음 접하시는 분들은 아래 내용을 따라 테스트 작업을 해보시는 것을 추천드립니다. (참고로 2명 이상이 함께 테스트를 해보는 것이 Resolve Confilcts나 Review Request 등 다양한 상황을 경험하실 수 있어요.)
 
-
-## <div id="guide1">**Guide 1. Master에서 1개의 Branch 생성 후 Merge하기**</div>
+<div id="guide1">
+  <h2>
+    Guide 1. Master에서 1개의 Branch 생성 후 Merge하기
+  </h2>
+</div>
 
 ​	![img_guide1-1](/assets/images/jane/abstract/guide1/img_guide1-1.png)
 
