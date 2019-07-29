@@ -13,9 +13,9 @@ WWDC 2019에서 발표된 SwiftUI는 기존의 Storyboard와 Autolayout을 대�
 
 발표 후 개발자들에게 WWDC 2019 중 가장 큰 환호를 들었다고 해도 과언이 아닌데요.
 
-개인적으로 혁신이라 불릴만큼 매우 놀랍고 간편한 프레임 워크라고 생각합니다.
+개인적으로 혁신이라 불릴만큼 매우 놀랍고 간편한 프레임 워크라고 생각합니다.  
 
-일단 UI 프레임워크니 사진으로 먼저 만나보는게 좋겠죠(?)
+일단 UI 프레임워크니 사진으로 먼저 만나보는게 좋겠죠(?)  
 
 # SwiftUI 핥아보기
 
@@ -26,22 +26,17 @@ SwiftUI 기반의 프로젝트를 생성하는건 매우 간단합니다.
 1. Xcode 11을 실행합니다.
 
 2. Create a new Xcode project 버튼을 누릅니다.
-
-![](/assets/images/shirou/SwiftUi+Combine/2019-06-12__6-9b008285-d4ed-40e0-a616-036b2b11f8c6.50.58.png)
+![](/assets/images/shirou/SwiftUi+Combine/2019-06-12__6-db59c4c0-b1ad-458c-94e4-546e29bc7abf.47.15.png)
 
 3. Single View App을 선택 후 Next 버튼을 누릅니다.
-
 ![](/assets/images/shirou/SwiftUi+Combine/2019-06-12__6-44f5b34e-0855-498b-b353-d4b1db418112.48.20.png)
 
 4.  간단한 정보를 기입 후 Use SwiftUI 체크 확인 후 Next버튼을 누릅니다.
-
 ![](/assets/images/shirou/SwiftUi+Combine/2019-06-12__6-e79ce31f-b3ab-41aa-b42d-ad39b0bbe08c.48.51.png)
 
-5.  그럼 짜잔~ 하고 처음 보는 화면이 반겨줍니다!
-
+5.  그럼 짜잔~ 하고 처음 보는 화면이 반겨줍니다!  
 기본적으로 ContentView가 생성되어있고 기존엔 볼 수 없었던 SceneDelegate 파일이 생겼네요.
 프로젝트 생성 후 기본적으로 프리뷰가 Pause 되어 있는 상태이니 Resume를 눌러줍니다.
-
 ![](/assets/images/shirou/SwiftUi+Combine/2019-06-12__6-57ba88cd-2432-4d61-a19d-ef1fa9594a32.50.11.png)
 
 6. 그 후 이렇게 프리뷰가 활성화되면서 Hello World가 떠있는 목업을 볼 수 있습니다.
@@ -49,7 +44,6 @@ SwiftUI 기반의 프로젝트를 생성하는건 매우 간단합니다.
 아주 간단하죠?
 
 해당 사진을 보면 기존 UIKit의 `UILabel` 와 같은 역할을 하는 `View`가 `Text`로 선언되어있는것을 볼 수 있습니다.
-
 ![](/assets/images/shirou/SwiftUi+Combine/2019-06-12__6-9b008285-d4ed-40e0-a616-036b2b11f8c6.50.58.png)
 
 아무런 이미지나 assets에 추가후 `cmd` + `shift` + `l`  단축키를 입력하면 
@@ -118,7 +112,7 @@ List(0..<5) {_ in
 
 더 자세한 `View` 레퍼런스는 [공식 문서](https://developer.apple.com/documentation/swiftui/views_and_controls)에서, 그에 상응하는 UIKIt 객체 비교는  [해당 git repo 섹션](https://github.com/SimpleBoilerplates/SwiftUI-Cheat-Sheet#uikit-equivalent-in-swiftui)에서 확인해주세요.
 
-애플에서 제공하는 [Tutorials](https://developer.apple.com/tutorials/swiftui)도 보면 좋을듯합니다. 
+애플에서 제공하는 [Tutorials](https://developer.apple.com/tutorials/swiftui)도 보면 좋을듯합니다.   
 
 # Combine 이란?
 
@@ -277,11 +271,9 @@ struct ContentView : View {
 
 index가 4 인 Row선택시 error Alert이 뜨는것을 볼 수 있습니다.
 
-![](/assets/images/shirou/SwiftUi+Combine/2019-06-20__5-c755f588-a8f0-4894-bd61-741e5ddf59e4.55.55.png){: width="50%"}
-
-![](/assets/images/shirou/SwiftUi+Combine/2019-06-20__5-a20d6952-5c6b-4def-84f2-a9180555a2f6.59.11.png){: width="50%"}
-
-![](/assets/images/shirou/SwiftUi+Combine/2019-06-20__6-9c52122b-5380-41fb-a129-eeaa2abd2aef.00.02.png){: width="50%"}
+![](/assets/images/shirou/SwiftUi+Combine/2019-06-20__5-c755f588-a8f0-4894-bd61-741e5ddf59e4.55.55.png){: width="30%"}
+![](/assets/images/shirou/SwiftUi+Combine/2019-06-20__5-a20d6952-5c6b-4def-84f2-a9180555a2f6.59.11.png){: width="30%"}
+![](/assets/images/shirou/SwiftUi+Combine/2019-06-20__6-9c52122b-5380-41fb-a129-eeaa2abd2aef.00.02.png){: width="30%"}
 
 최종 코드는 아래에서 확인 하실 수 있습니다.
 
