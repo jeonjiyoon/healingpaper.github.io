@@ -26,7 +26,7 @@ SwiftUI 기반의 프로젝트를 생성하는건 매우 간단합니다.
 1. Xcode 11을 실행합니다.
 
 2. Create a new Xcode project 버튼을 누릅니다.
-![](/assets/images/shirou/SwiftUiCombine/2019-06-12__6-db59c4c0-b1ad-458c-94e4-546e29bc7abf.47.15.png)
+![](/assets/images/shirou/SwiftUiCombine/suc_1.png)
 
 3. Single View App을 선택 후 Next 버튼을 누릅니다.
 ![](/assets/images/shirou/SwiftUiCombine/2019-06-12__6-44f5b34e-0855-498b-b353-d4b1db418112.48.20.png)
@@ -361,7 +361,6 @@ class ContentViewModel: BindableObject {
     }
 }
 ```
-![](/assets/images/welin/virtualdom/what_is_dom.png)
 # 마치며...
 
 이렇게 WWDC 2019에서 공개된 SwiftUi와 Combine 프레임워크를 살펴 보았습니다.
