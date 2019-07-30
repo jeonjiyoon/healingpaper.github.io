@@ -132,7 +132,7 @@ List(0..<5) {_ in
 
  `RxCocoa` 옆엔 `RxSwift`가 있고 `SwiftUI` 옆엔 `Combine` 이 있는거죠!
 
-저도 아직 까지는 `RxSwift`를 다뤄보셨다면 `Combine` 사용이 편할듯합니다.
+`RxSwift`를 다뤄보셨다면 `Combine` 사용이 편할듯합니다.
 
 RxSwift와 Combine의 비교는 [해당 블로그](https://medium.com/gett-engineering/rxswift-to-apples-combine-cheat-sheet-e9ce32b14c5b)를 확인해주세요.
 
