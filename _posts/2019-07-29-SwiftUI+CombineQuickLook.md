@@ -26,7 +26,7 @@ SwiftUI 기반의 프로젝트를 생성하는건 매우 간단합니다.
 1. Xcode 11을 실행합니다.
 
 2. Create a new Xcode project 버튼을 누릅니다.
-![](/assets/images/shirou/swiftUiCombine/suc_1.jpg)
+![](/assets/images/shirou/swiftUiCombine/suc_1.JPG)
 
 3. Single View App을 선택 후 Next 버튼을 누릅니다.
 ![](/assets/images/shirou/swiftUiCombine/2019-06-12__6-44f5b34e-0855-498b-b353-d4b1db418112.48.20.png)
