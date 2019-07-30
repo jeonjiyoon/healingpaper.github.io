@@ -156,3 +156,15 @@
     }
   }
 }
+
+/////// Content ///////
+.page-content {
+  .center-image {
+    margin: 0 auto;
+    display: block;
+  }
+  
+  figcaption {
+    text-align: center;
+  }
+}
