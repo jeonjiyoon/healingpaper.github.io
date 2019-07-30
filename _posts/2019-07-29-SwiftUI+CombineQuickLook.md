@@ -26,35 +26,35 @@ SwiftUI 기반의 프로젝트를 생성하는건 매우 간단합니다.
 1. Xcode 11을 실행합니다.
 
 2. Create a new Xcode project 버튼을 누릅니다.
-![](/assets/images/shirou/swiftUiCombine/suc_1.JPG)
+![](/assets/images/shirou/swiftUICombine/suc_1.JPG)
 
 3. Single View App을 선택 후 Next 버튼을 누릅니다.
-![](/assets/images/shirou/swiftUiCombine/2019-06-12__6-44f5b34e-0855-498b-b353-d4b1db418112.48.20.png)
+![](/assets/images/shirou/swiftUICombine/2019-06-12__6-44f5b34e-0855-498b-b353-d4b1db418112.48.20.png)
 
 4.  간단한 정보를 기입 후 Use SwiftUI 체크 확인 후 Next버튼을 누릅니다.
-![](/assets/images/shirou/swiftUiCombine/2019-06-12__6-e79ce31f-b3ab-41aa-b42d-ad39b0bbe08c.48.51.png)
+![](/assets/images/shirou/swiftUICombine/2019-06-12__6-e79ce31f-b3ab-41aa-b42d-ad39b0bbe08c.48.51.png)
 
 5.  그럼 짜잔~ 하고 처음 보는 화면이 반겨줍니다!  
 기본적으로 ContentView가 생성되어있고 기존엔 볼 수 없었던 SceneDelegate 파일이 생겼네요.
 프로젝트 생성 후 기본적으로 프리뷰가 Pause 되어 있는 상태이니 Resume를 눌러줍니다.
-![](/assets/images/shirou/swiftUiCombine/2019-06-12__6-57ba88cd-2432-4d61-a19d-ef1fa9594a32.50.11.png)
+![](/assets/images/shirou/swiftUICombine/2019-06-12__6-57ba88cd-2432-4d61-a19d-ef1fa9594a32.50.11.png)
 
 6. 그 후 이렇게 프리뷰가 활성화되면서 Hello World가 떠있는 목업을 볼 수 있습니다.
 
 아주 간단하죠?
 
 해당 사진을 보면 기존 UIKit의 `UILabel` 와 같은 역할을 하는 `View`가 `Text`로 선언되어있는것을 볼 수 있습니다.
-![](/assets/images/shirou/swiftUiCombine/2019-06-12__6-9b008285-d4ed-40e0-a616-036b2b11f8c6.50.58.png)
+![](/assets/images/shirou/swiftUICombine/2019-06-12__6-9b008285-d4ed-40e0-a616-036b2b11f8c6.50.58.png)
 
 아무런 이미지나 assets에 추가후 `cmd` + `shift` + `l`  단축키를 입력하면 
 
 다음과 같은 창이 뜹니다.  
 
-![](/assets/images/shirou/swiftUiCombine/2019-06-12__7-4b3838bd-acc1-4101-ab09-d15587c6c9cb.07.24.png)
+![](/assets/images/shirou/swiftUICombine/2019-06-12__7-4b3838bd-acc1-4101-ab09-d15587c6c9cb.07.24.png)
 
 이 화면은 라이브러리라고 불리는듯합니다.
 
-![](/assets/images/shirou/swiftUiCombine/2019-06-13__10-3ce4e788-b34f-4ec1-82e0-fa30f0fca91d.33.48.png)
+![](/assets/images/shirou/swiftUICombine/2019-06-13__10-3ce4e788-b34f-4ec1-82e0-fa30f0fca91d.33.48.png)
 
 라이브러리에서 코드나 프리뷰 화면으로 Drag & Drop 해서 `View` 를 추가할 수 있습니다.
 
@@ -62,7 +62,7 @@ SwiftUI 기반의 프로젝트를 생성하는건 매우 간단합니다.
 
 이미지를 Text아래에 Drag & Drop 했더니 다음과 같이 `Image` `View`가 작성되었네요.
 
-![](/assets/images/shirou/swiftUiCombine/2019-06-12__7-11decd1e-8ae0-484c-8a65-835ffbceccdc.11.59.png)
+![](/assets/images/shirou/swiftUICombine/2019-06-12__7-11decd1e-8ae0-484c-8a65-835ffbceccdc.11.59.png)
 
 이미지가 너무 큼지막하니 좌측 코드에서 다음과 같이 수정 해보겠습니다.
 
@@ -76,7 +76,7 @@ VStack {
 }
 ```
 
-![](/assets/images/shirou/swiftUiCombine/2019-06-12__7-b644367b-1180-4fde-8790-526165a21aa8.24.31.png)
+![](/assets/images/shirou/swiftUICombine/2019-06-12__7-b644367b-1180-4fde-8790-526165a21aa8.24.31.png)
 
 이 모든 스타일링을 체이닝으로 처리 할 수 있다니 정말 놀랍지 않습니까? 
 
@@ -100,7 +100,7 @@ List(0..<5) {_ in
 }
 ```
 
-![](/assets/images/shirou/swiftUiCombine/2019-06-13__10-21a1d0f0-4f91-445d-afda-d09986db07cf.52.41.png)
+![](/assets/images/shirou/swiftUICombine/2019-06-13__10-21a1d0f0-4f91-445d-afda-d09986db07cf.52.41.png)
 
 이렇게 List 클로저하나 씌웠을 뿐인데 
 
@@ -162,7 +162,7 @@ var body: some View {
 }
 ```
 
-![](/assets/images/shirou/swiftUiCombine/2019-06-20__5-1951069c-aed0-4996-a020-8a84e8f3505b.15.16.png){: width="50%"}
+![](/assets/images/shirou/swiftUICombine/2019-06-20__5-1951069c-aed0-4996-a020-8a84e8f3505b.15.16.png){: width="50%"}
 
 벌써 이렇게 아름다운(?) UI가 생성되었네요.
 
@@ -271,9 +271,9 @@ struct ContentView : View {
 
 index가 4 인 Row선택시 error Alert이 뜨는것을 볼 수 있습니다.
 
-![](/assets/images/shirou/swiftUiCombine/2019-06-20__5-c755f588-a8f0-4894-bd61-741e5ddf59e4.55.55.png){: width="30%"}
-![](/assets/images/shirou/swiftUiCombine/2019-06-20__5-a20d6952-5c6b-4def-84f2-a9180555a2f6.59.11.png){: width="30%"}
-![](/assets/images/shirou/swiftUiCombine/2019-06-20__6-9c52122b-5380-41fb-a129-eeaa2abd2aef.00.02.png){: width="30%"}
+![](/assets/images/shirou/swiftUICombine/2019-06-20__5-c755f588-a8f0-4894-bd61-741e5ddf59e4.55.55.png){: width="30%"}
+![](/assets/images/shirou/swiftUICombine/2019-06-20__5-a20d6952-5c6b-4def-84f2-a9180555a2f6.59.11.png){: width="30%"}
+![](/assets/images/shirou/swiftUICombine/2019-06-20__6-9c52122b-5380-41fb-a129-eeaa2abd2aef.00.02.png){: width="30%"}
 
 최종 코드는 아래에서 확인 하실 수 있습니다.
 
