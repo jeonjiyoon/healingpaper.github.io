@@ -361,7 +361,7 @@ class ContentViewModel: BindableObject {
     }
 }
 ```
-
+![](/assets/images/welin/virtualdom/what_is_dom.png)
 # 마치며...
 
 이렇게 WWDC 2019에서 공개된 SwiftUi와 Combine 프레임워크를 살펴 보았습니다.
