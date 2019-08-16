@@ -43,7 +43,9 @@ Dart는 JIT(just-in-time) 컴파일과 AOT(ahead-of-time) 컴파일을 지원합
 
 힐링페이퍼에선 개발자에게 정기적으로 개발 능력을 향상할 수 있는 시간을 제공합니다. 주어진 일주일 동안 플러터로 사내에서 사용하기 위한 앱을 만들었습니다.
 
-![](/assets/images/chichi/Flutterfull/20190611_203633.gif)
+<video autoplay loop muted playsinline class="center" width="100%">
+  <source src="/assets/images/chichi/FlutterFull/20190611_203633_2.mp4" type="video/mp4">
+</video>
 
 ## 어떤 앱인가요
 
