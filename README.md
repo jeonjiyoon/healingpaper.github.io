@@ -2,6 +2,7 @@
 
 ```
 $ gem install bundler jekyll
+$ bundle install
 ```
 
 ### 실행 및 빌드
