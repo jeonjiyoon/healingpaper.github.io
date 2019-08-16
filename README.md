@@ -1,7 +1,7 @@
 ### 설치
 
 ```
-$ bundle
+$ gem install bundler jekyll
 ```
 
 ### 실행 및 빌드
