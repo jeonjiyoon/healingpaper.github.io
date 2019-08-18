@@ -1,19 +1,17 @@
 ---
 layout: default
 ---
-<div>
-  {{ page.date | date: "%m월 %d일, %Y" }}
-  <!--, {{ page.author }}-->
-  {% assign author = site.authors | where: 'name', page.author | first %}
-  {% if author %}
-    <a href="{{ author.url }}">{{ author.name }}</a>
-  {% endif %}
+{% assign author = site.authors | where: 'name', page.author | first %}
+<div class="post-top">
+  {{ page.date | date: "%Y년 %-m월 %-d일" }} |
+  <a class="post-author-link" href="{{ author.url | relative_url}}"> {{ author.name }} </a>
 </div>
+
 <h1 class="page-heading">{{ page.title }}</h1>
 <div class="page-tags">
   {% for tag in page.tags %}
   <span class="tag">
-     #{{ tag }}
+     {{ tag }}
     </span>
   {% endfor %}
 </div>
