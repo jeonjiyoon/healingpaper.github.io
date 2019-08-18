@@ -1,5 +1,6 @@
 ---
 layout: default
+comments: true
 ---
 {% assign author = site.authors | where: 'name', page.author | first %}
 <div class="post-top">
@@ -27,8 +28,8 @@ layout: default
    *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
 
   var disqus_config = function () {
-    this.page.url = 'https://healingpaper.github.io/';  // Replace PAGE_URL with your page's canonical URL variable
-    this.page.identifier = 'healingpaper'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    this.page.url = 'https://healingpaper.github.io{{page.url}}';  // Replace PAGE_URL with your page's canonical URL variable
+    this.page.identifier = '{{page.title}}'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable\
   };
 
   (function() { // DON'T EDIT BELOW THIS LINE
