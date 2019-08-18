@@ -228,11 +228,26 @@
 
 .page-content {
   .center {
-    margin: 0 auto;
+    margin-left: auto;
+    margin-right: auto;
     display: block;
   }
 
-  figcaption {
-    text-align: center;
+  img, video {
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
+
+  figure {
+    margin-top: 30px;
+    margin-bottom: 30px;
+
+    > * {
+      margin-bottom: 10px;
+    }
+
+    figcaption {
+      text-align: center;
+    }
   }
 }
