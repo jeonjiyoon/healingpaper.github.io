@@ -40,3 +40,42 @@ comments: true
   })();
 </script>
 <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+<div id="modal">
+  <img id="modal-img">
+  <video autoplay loop muted playsinline id="modal-video">
+    <source id="modal-video-source">
+  </video>
+</div>
+
+<script>
+  const visual_contents = document.querySelectorAll(".page-content img, video")
+  const modal = document.querySelector("#modal")
+  const modal_img = document.querySelector("#modal-img")
+  const modal_video = document.querySelector("#modal-video")
+
+  visual_contents.forEach(content => {
+    content.onclick = () => {
+      modal_img.style.display = "none"
+      modal_video.style.display = "none"
+
+      const tag = content.tagName
+      if (tag == "IMG") {
+        modal_img.style.display = "block"
+        modal_img.src = content.src
+      } else if (tag == "VIDEO") {
+        modal_video.style.display = "block"
+        modal_video.children[0].src = content.children[0].src
+        modal_video.children[0].type = content.children[0].type
+        modal_video.load()
+        modal_video.play()
+      }
+
+      modal.style.display = "block"
+    }
+  });
+
+  modal.onclick = () => {
+    modal.style.display = "none";
+  }
+</script>
