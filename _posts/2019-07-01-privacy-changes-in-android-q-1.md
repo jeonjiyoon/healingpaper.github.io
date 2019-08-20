@@ -20,7 +20,7 @@ author: David Ha
 
 
 
-![image_1.1](/assets/images/david/image_1.1.jpeg)
+![image_1.1](/assets/images/david/2019_google_io/image_1.1.jpeg)
 
 Lockdown Mode, Secure DNS 그리고 마시멜로우 부터 추가되었던 Runtime permissions 등이 있었습니다.
 
@@ -28,7 +28,7 @@ Lockdown Mode, Secure DNS 그리고 마시멜로우 부터 추가되었던 Runti
 
 ---
 
-![image_1.2](/assets/images/david/image_1.2.jpeg)
+![image_1.2](/assets/images/david/2019_google_io/image_1.2.jpeg)
 
 
 
@@ -38,7 +38,7 @@ Android Q 에서도 개인정보를 보호하기 위하여 많은 기능이 추�
 
 ---
 
-![image_1.3](/assets/images/david/image_1.3.jpeg)
+![image_1.3](/assets/images/david/2019_google_io/image_1.3.jpeg)
 
 
 
@@ -48,7 +48,7 @@ Android Q 에서도 개인정보를 보호하기 위하여 많은 기능이 추�
 
 ---
 
-![image_1.4](/assets/images/david/image_1.4.jpeg)
+![image_1.4](/assets/images/david/2019_google_io/image_1.4.jpeg)
 
 
 
@@ -58,7 +58,7 @@ Android Q 에서도 개인정보를 보호하기 위하여 많은 기능이 추�
 
 ---
 
-![image_1.5](/assets/images/david/image_1.5.jpeg)
+![image_1.5](/assets/images/david/2019_google_io/image_1.5.jpeg)
 
 
 
@@ -74,7 +74,7 @@ Android Q 에서도 개인정보를 보호하기 위하여 많은 기능이 추�
 
 ---
 
-![image_1.6](/assets/images/david/image_1.6.jpeg)
+![image_1.6](/assets/images/david/2019_google_io/image_1.6.jpeg)
 
 
 
@@ -86,7 +86,7 @@ Android Q Beta에서 백그라운드 제한사항을 실행시키고 싶으면
 
 ---
 
-![image_1.7](/assets/images/david/image_1.7.jpeg)
+![image_1.7](/assets/images/david/2019_google_io/image_1.7.jpeg)
 
 
 
@@ -98,7 +98,7 @@ Android Q 이전에는 사용자 상호작용 없이 백그라운드에서 액�
 
 ---
 
-![image_1.8](/assets/images/david/image_1.8.jpeg)
+![image_1.8](/assets/images/david/2019_google_io/image_1.8.jpeg)
 
 
 
@@ -108,7 +108,7 @@ Android Q 이전에는 사용자 상호작용 없이 백그라운드에서 액�
 
 ---
 
-![image_1.9](/assets/images/david/image_1.9.jpeg)
+![image_1.9](/assets/images/david/2019_google_io/image_1.9.jpeg)
 
 
 
@@ -118,7 +118,7 @@ Android Q 이전에는 사용자 상호작용 없이 백그라운드에서 액�
 
 ---
 
-![image_1.10](/assets/images/david/image_1.10.jpeg)
+![image_1.10](/assets/images/david/2019_google_io/image_1.10.jpeg)
 
 
 
@@ -130,7 +130,7 @@ onMessageReceived 함수 안에서는 액티비티를 실행시키기 위하여 
 
 ---
 
-![image_1.11](/assets/images/david/image_1.11.jpeg)
+![image_1.11](/assets/images/david/2019_google_io/image_1.11.jpeg)
 
 
 
@@ -146,7 +146,7 @@ Android Q에서는 백그라운드에서 액티비티 실행이 제한됩니다.
 
 ---
 
-![image_1.12](/assets/images/david/image_1.12.jpeg)
+![image_1.12](/assets/images/david/2019_google_io/image_1.12.jpeg)
 
 
 
@@ -156,7 +156,7 @@ Android Q에서는 백그라운드에서 액티비티 실행이 제한됩니다.
 
 ---
 
-![image_1.13](/assets/images/david/image_1.13.jpeg)
+![image_1.13](/assets/images/david/2019_google_io/image_1.13.jpeg)
 
 
 
@@ -172,7 +172,7 @@ Android Q에서는 백그라운드에서 액티비티 실행이 제한됩니다.
 
 ---
 
-![image_1.14](/assets/images/david/image_1.14.jpeg)
+![image_1.14](/assets/images/david/2019_google_io/image_1.14.jpeg)
 
 
 
@@ -182,7 +182,7 @@ Android Q에서는 백그라운드에서 액티비티 실행이 제한됩니다.
 
 ---
 
-![image_1.15](/assets/images/david/image_1.15.jpeg)
+![image_1.15](/assets/images/david/2019_google_io/image_1.15.jpeg)
 
 
 
@@ -194,7 +194,7 @@ Android Q에서 서버에서 push message를 받고 바로 액티비티를 실�
 
 ---
 
-![image_1.16](/assets/images/david/image_1.16.jpeg)
+![image_1.16](/assets/images/david/2019_google_io/image_1.16.jpeg)
 
 
 
@@ -204,7 +204,7 @@ Android Q에서 서버에서 push message를 받고 바로 액티비티를 실�
 
 ---
 
-![image_1.17](/assets/images/david/image_1.17.jpeg)
+![image_1.17](/assets/images/david/2019_google_io/image_1.17.jpeg)
 
 
 
@@ -214,7 +214,7 @@ Android Q에서 서버에서 push message를 받고 바로 액티비티를 실�
 
 ---
 
-![image_1.18](/assets/images/david/image_1.18.jpeg)
+![image_1.18](/assets/images/david/2019_google_io/image_1.18.jpeg)
 
 
 
@@ -226,7 +226,7 @@ Android Q에서 서버에서 push message를 받고 바로 액티비티를 실�
 
 ---
 
-![image_1.19](/assets/images/david/image_1.19.jpeg)
+![image_1.19](/assets/images/david/2019_google_io/image_1.19.jpeg)
 
 
 
@@ -236,7 +236,7 @@ Android Q에서 서버에서 push message를 받고 바로 액티비티를 실�
 
 ---
 
-![image_1.20](/assets/images/david/image_1.20.jpeg)
+![image_1.20](/assets/images/david/2019_google_io/image_1.20.jpeg)
 
 
 
@@ -248,7 +248,7 @@ PendingIntent에 대하여 좀 더 자세히 살펴보도록 하겠습니다.
 
 ---
 
-![image_1.21](/assets/images/david/image_1.21.jpeg)
+![image_1.21](/assets/images/david/2019_google_io/image_1.21.jpeg)
 
 
 
@@ -262,7 +262,7 @@ notification에서 앱에 있는 액티비티를 실행 시키려면 intent을 �
 
 ---
 
-![image_1.22](/assets/images/david/image_1.22.jpeg)
+![image_1.22](/assets/images/david/2019_google_io/image_1.22.jpeg)
 
 그러면 RemoteViews 에서 버튼들의 클릭액션은 어떻게 구현해야할까요?
 
@@ -270,7 +270,7 @@ notification에서 앱에 있는 액티비티를 실행 시키려면 intent을 �
 
 ---
 
-![image_1.23](/assets/images/david/image_1.23.jpeg)
+![image_1.23](/assets/images/david/2019_google_io/image_1.23.jpeg)
 
 
 
@@ -282,7 +282,7 @@ RemoteViews 는 다른 프로세스에서 동작하고 View를 상속받은 실�
 
 ---
 
-![image_1.24](/assets/images/david/image_1.24.jpeg)
+![image_1.24](/assets/images/david/2019_google_io/image_1.24.jpeg)
 
 
 
@@ -296,7 +296,7 @@ RemoteViews 는 다른 프로세스에서 동작하고 View를 상속받은 실�
 
 ---
 
-![image_1.25](/assets/images/david/image_1.25.jpeg)
+![image_1.25](/assets/images/david/2019_google_io/image_1.25.jpeg)
 
 
 
@@ -308,7 +308,7 @@ RemoteViews 는 다른 프로세스에서 동작하고 View를 상속받은 실�
 
 ---
 
-![image_1.26](/assets/images/david/image_1.26.jpeg)
+![image_1.26](/assets/images/david/2019_google_io/image_1.26.jpeg)
 
 
 

@@ -3,7 +3,7 @@ layout: post
 title: Privacy Changes in Android Q#2
 describe:
 categories: [Android]
-tags: [privacy change]
+tags: [privacy change, Android]
 author: David Ha
 ---
 ## Privacy Changes in Android Q#2
@@ -22,7 +22,7 @@ https://dhha22.github.io/android/2019/06/17/privacy_changes_in_android_q_1.html
 
 ---
 
-![image_2.1](/assets/images/david/image_2.1.jpeg)
+![image_2.1](/assets/images/david/2019_google_io/image_2.1.jpeg)
 
 
 
@@ -32,7 +32,7 @@ https://dhha22.github.io/android/2019/06/17/privacy_changes_in_android_q_1.html
 
 ---
 
-![image_2.2](/assets/images/david/image_2.2.jpeg)
+![image_2.2](/assets/images/david/2019_google_io/image_2.2.jpeg)
 
 
 
@@ -42,7 +42,7 @@ https://dhha22.github.io/android/2019/06/17/privacy_changes_in_android_q_1.html
 
 ---
 
-![image_2.3](/assets/images/david/image_2.3.jpeg)
+![image_2.3](/assets/images/david/2019_google_io/image_2.3.jpeg)
 
 
 
@@ -56,7 +56,7 @@ Android Q 부터 IMEI와 serial number와 같은 식별자는 사용할 수 없�
 
 ---
 
-![image_2.4](/assets/images/david/image_2.4.jpeg)
+![image_2.4](/assets/images/david/2019_google_io/image_2.4.jpeg)
 
 
 
@@ -68,7 +68,7 @@ Android Q 부터 IMEI와 serial number와 같은 식별자는 사용할 수 없�
 
 ---
 
-![image_2.5](/assets/images/david/image_2.5.jpeg)
+![image_2.5](/assets/images/david/2019_google_io/image_2.5.jpeg)
 
 
 
@@ -76,7 +76,7 @@ Android Q 부터 IMEI와 serial number와 같은 식별자는 사용할 수 없�
 
 ---
 
-![image_2.6](/assets/images/david/image_2.6.jpeg)
+![image_2.6](/assets/images/david/2019_google_io/image_2.6.jpeg)
 
 
 
@@ -92,7 +92,7 @@ Android Developer 공식 사이트를 보면 다음과 같이 명시하고 있�
 
 ---
 
-![image_2.7](/assets/images/david/image_2.7.jpeg)
+![image_2.7](/assets/images/david/2019_google_io/image_2.7.jpeg)
 
 
 
@@ -104,7 +104,7 @@ Android Q 부터 IMEI 식별자는 사용할 수 없지만 SSAID는 다바이스
 
 ---
 
-![image_2.8](/assets/images/david/image_2.8.jpeg)
+![image_2.8](/assets/images/david/2019_google_io/image_2.8.jpeg)
 
 
 
@@ -118,7 +118,7 @@ Android Q 부터 IMEI 식별자는 사용할 수 없지만 SSAID는 다바이스
 
 ---
 
-![image_2.9](/assets/images/david/image_2.9.jpeg)
+![image_2.9](/assets/images/david/2019_google_io/image_2.9.jpeg)
 
 
 
@@ -128,7 +128,7 @@ Android Q 부터 IMEI 식별자는 사용할 수 없지만 SSAID는 다바이스
 
 ---
 
-![image_2.10](/assets/images/david/image_2.10.jpeg)
+![image_2.10](/assets/images/david/2019_google_io/image_2.10.jpeg)
 
 
 
@@ -140,7 +140,7 @@ Widevine 모듈은 Google 에서 제공하는 모듈중 하나이며 안드로�
 
 ---
 
-![image_2.11](/assets/images/david/image_2.11.jpeg)
+![image_2.11](/assets/images/david/2019_google_io/image_2.11.jpeg)
 
 
 
@@ -148,7 +148,7 @@ ExoPlayer 에서 Widevine DRM 은 안드로이드 4.3 이상부터 사용할 수
 
 ---
 
-![image_2.12](/assets/images/david/image_2.12.jpeg)
+![image_2.12](/assets/images/david/2019_google_io/image_2.12.jpeg)
 
 
 
@@ -162,7 +162,7 @@ Widevine 모듈이 있는지 체크하는 로직을 추가해야 합니다.
 
 ---
 
-![image_2.13](/assets/images/david/image_2.13.jpeg)
+![image_2.13](/assets/images/david/2019_google_io/image_2.13.jpeg)
 
 
 
@@ -180,7 +180,7 @@ signed response 를 앱에서 받은 후 그 값을 신뢰할수 있는 서버�
 
 ---
 
-![image_2.14](/assets/images/david/image_2.14.jpeg)
+![image_2.14](/assets/images/david/2019_google_io/image_2.14.jpeg)
 
 
 
