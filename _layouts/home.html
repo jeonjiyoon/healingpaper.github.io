@@ -10,7 +10,7 @@ layout: default
       <li class="post post-container">
         <div class="post-side">
           {% assign author = site.authors | where: 'name', post.author | first %}
-          <img class="post-author-image" src="{{ author.image }}">
+          <img class="post-author-image"  href="{{ author.url | relative_url}}" src="{{ author.image }}">
         </div>
         <div class="post-main">
           <div class="post-top">

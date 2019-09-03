@@ -1,7 +1,7 @@
 ---
 short_name: json
 name: JSon
-position: Backend Developer
+position: Back-end Developer
 image: /assets/images/profile/json.jpg
 ---
 사용자가 불편함 없이 빠르고 안정적으로 더 좋은 의료 서비스를 이용할 수 있도록 \\
