@@ -3,7 +3,7 @@ title: '날 닮은 너를, 부족한 너를.'
 describe: 'Arrays.arrayList 는 ArrayList 와 다르다'
 categories: [Java]
 tags: [Java, Array, List, Collection]
-author: Brown
+author: Brown Kimyoon
 ---
 
 

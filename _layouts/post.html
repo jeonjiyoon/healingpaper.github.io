@@ -5,7 +5,9 @@ comments: true
 {% assign author = site.authors | where: 'name', page.author | first %}
 <div class="post-top">
   {{ page.date | date: "%Y년 %-m월 %-d일" }} |
-  <a class="post-author-link" href="{{ author.url | relative_url}}"> {{ author.name }} </a>
+  <a class="post-author-link" href="{{ author.url | relative_url}}"> {{ author.name }}
+    <img class="post-author-image" src="{{ author.image }}">
+  </a>
 </div>
 
 <h1 class="page-heading">{{ page.title }}</h1>
