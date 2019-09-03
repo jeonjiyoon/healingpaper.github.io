@@ -6,12 +6,12 @@ comments: true
 <div class="post-top">
   {{ page.date | date: "%Y년 %-m월 %-d일" }} |
   <a class="post-author-link" href="{{ author.url | relative_url}}"> {{ author.name }}
-    &nbsp<img class="post-author-image" src="{{ author.image }}" width="20px">
+    &nbsp<img class="post-inner-author-image" src="{{ author.image }}">
   </a>
 </div>
 
 <h1 class="page-heading">{{ page.title }}</h1>
-<div class="page-subtitle">{{ page.describe }}</div>
+<div class="post-describe">{{ post.describe | escape }}</div>
 <div class="page-tags">
   {% for tag in page.tags %}
   <span class="tag">

@@ -93,6 +93,12 @@
   }
 }
 
+.post-inner-author-image {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+}
+
 .post-top {
   font-size: 14px;
   margin-bottom: 8px;
@@ -223,11 +229,6 @@
 
 .page-heading {
   font-size: 32px !important;
-  font-weight: bold;
-}
-
-.page-subtitle {
-  font-size: 12px !important;
   font-weight: bold;
 }
 
