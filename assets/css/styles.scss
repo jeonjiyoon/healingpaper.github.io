@@ -84,6 +84,7 @@
   width: 72px;
   height: 72px;
   border-radius: 50%;
+  cursor: inherit !important;
 
   @media screen and (max-width: 600px) {
     & {
@@ -97,6 +98,7 @@
   width: 24px;
   height: 24px;
   border-radius: 50%;
+  cursor: inherit !important;
 }
 
 .post-top {
