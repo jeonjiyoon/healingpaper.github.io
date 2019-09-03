@@ -1,5 +1,5 @@
 ---
-title: '여러개의 DB작업을 동시다발적으로 수행해서 한번에 합쳐서 보내줘야 할 때'
+title: '여러개의 DB 작업을 동시에 수행하고 결과를 합쳐서 보내줘야 할 때'
 describe: 'Spring 에서 @Async 를 이용한 동시다발적인 Hibernate DB 작업'
 categories: [Spring]
 tags: [Spring, Async, Hibernate, Thread, Transaction]
