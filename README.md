@@ -1,3 +1,6 @@
+### 출판 경로
+https://healingpaper.github.io
+
 ### 설치
 
 ```
