@@ -1,6 +1,7 @@
 ---
 ---
-@import "main"; // this tells Sass to look for a file called main.scss in the sass directory (_sass/)
+@import "main";
+@import "highlight";
 
 .custom-site-header .wrapper {
   padding: 40px 15px;
@@ -282,5 +283,15 @@
     max-width: 80%;
     margin: 0 auto;
     cursor: zoom-out;
+  }
+}
+
+.highlighter-rouge {
+  border: none;
+  border-radius: 4px;
+  vertical-align: middle;
+
+  .highlight {
+    border-radius: 4px;
   }
 }
