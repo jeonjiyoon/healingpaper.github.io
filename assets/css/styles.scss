@@ -235,7 +235,7 @@
   font-weight: bold;
 }
 
-.page-content {
+.page-content:not(.custom-page-content) {
   hr {
     margin: 30px 0;
   }
