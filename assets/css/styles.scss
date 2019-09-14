@@ -302,6 +302,23 @@ h1 {
   }
 }
 
+.post-nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 10px;
+
+  .post-nav-prev {
+    max-width: 50%;
+    text-align: left;
+  }
+
+  .post-nav-next {
+    max-width: 50%;
+    text-align: right;
+  }
+}
+
 #modal {
   display: none;
   position: fixed;
