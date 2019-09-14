@@ -6,11 +6,11 @@ tags: [Spring, Async, Hibernate, Thread, Transaction]
 author: Brown Kimyoon
 ---
 
-요번 글에서 다루고자 하는 점은 
+요번 글에서 다루고자 하는 점은
 
 1. Spring 에서 API 처리 시
 2. Asynchronous 한 Hibernate DB 작업을 하고
-3. 모든 결과물을 wait 해서 함께 처리한 뒤 내려줘야 하는 상황   
+3. 모든 결과물을 wait 해서 함께 처리한 뒤 내려줘야 하는 상황
 
 3가지 요소를 다 처리하는 방법에 대한 고민입니다.
 
@@ -24,30 +24,34 @@ author: Brown Kimyoon
 
 회사에서 개발중인 소스코드 중에는 비동기 처리 로직을 위해 `CompletableFuture` 를 사용하고 있는 부분들이 있습니다. `Mybatis` 세션을 이용하는 경우, 별 문제 없이 해당 작업을 `CompletableFuture.runAsync()` 를 이용해서 여러 task 를 돌린 뒤, `CompletableFuture.allOf(futureTaskArray).join()` 을 이용해 동시에 수행하고 결과를 기다렸다가 받아 올 수 있었습니다.
 
- 동일한 방법을 이번 작업에 사용해 보았지만, 기존의 통합검색이 `Mybatis` session 을 이용한 것과 달리 위젯부분은 `Hibernate` 를 사용하고 있었고, `Hibernate` 는 기본적으로 Synchronized-transactional session 이 필요하기에 오류가 발생합니다
+동일한 방법을 이번 작업에 사용해 보았지만, 기존의 통합검색이 `Mybatis` session 을 이용한 것과 달리위젯부분은 `Hibernate` 를 사용하고 있었고, `Hibernate` 는 기본적으로 Synchronized-transactionalsession 이 필요하기에 오류가 발생합니다
 
-    Caused by: org.hibernate.HibernateException: Could not obtain transaction-synchronized Session for current thread
-    	at org.springframework.orm.hibernate4.SpringSessionContext.currentSession(SpringSessionContext.java:134)
-    	at org.hibernate.internal.SessionFactoryImpl.getCurrentSession(SessionFactoryImpl.java:1014)
-    	at com.healing.beauty.dao.BaseDao.getCurSession(BaseDao.java:44)
+```
+Caused by: org.hibernate.HibernateException: Could not obtain transaction-synchronized Session for current thread
+	at org.springframework.orm.hibernate4.SpringSessionContext.currentSession(SpringSessionContext.java:134)
+	at org.hibernate.internal.SessionFactoryImpl.getCurrentSession(SessionFactoryImpl.java:1014)
+	at com.healing.beauty.dao.BaseDao.getCurSession(BaseDao.java:44)
+```
 
 저희 hibernate 는 미리 만들어 둔 BaseDao 라는 부모 Dao 클래스에서 session 을 잡아다 사용하게 되어있는데, 해당 작업시 `SpringSessionContext` 에서는 아래와 같이 synchorize 한 트랜잭션을 가지고 있는지를 체크하게 됩니다.
 
-    if (TransactionSynchronizationManager.isSynchronizationActive()) {
-    			Session session = this.sessionFactory.openSession();
-    			if (TransactionSynchronizationManager.isCurrentTransactionReadOnly()) {
-    				session.setFlushMode(FlushMode.MANUAL);
-    			}
-    			SessionHolder sessionHolder = new SessionHolder(session);
-    			TransactionSynchronizationManager.registerSynchronization(
-    					new SpringSessionSynchronization(sessionHolder, this.sessionFactory, true));
-    			TransactionSynchronizationManager.bindResource(this.sessionFactory, sessionHolder);
-    			sessionHolder.setSynchronizedWithTransaction(true);
-    			return session;
-    		}
-    		else {
-    			throw new HibernateException("Could not obtain transaction-synchronized Session for current thread");
-    		}
+```java
+if (TransactionSynchronizationManager.isSynchronizationActive()) {
+	Session session = this.sessionFactory.openSession();
+	if (TransactionSynchronizationManager.isCurrentTransactionReadOnly()) {
+		session.setFlushMode(FlushMode.MANUAL);
+	}
+	SessionHolder sessionHolder = new SessionHolder(session);
+	TransactionSynchronizationManager.registerSynchronization(
+		new SpringSessionSynchronization(sessionHolder, this.sessionFactory, true));
+	TransactionSynchronizationManager.bindResource(this.sessionFactory, sessionHolder);
+	sessionHolder.setSynchronizedWithTransaction(true);
+	return session;
+}
+else {
+	throw new HibernateException("Could not obtain transaction-synchronized Session for current thread");
+}
+```
 
 결국 completableFuture 를 쓸 경우, 이 부분을 통과하지 못했습니다.
 
@@ -55,23 +59,24 @@ author: Brown Kimyoon
 
 Async 를 사용하기 위한 전제조건은 상세한 설명들이 링크에 있으니 참고바랍니다
 
-[How To Do @Async in Spring | Baeldung](https://www.baeldung.com/spring-async)
+[How To Do @Async in Spring \| Baeldung](https://www.baeldung.com/spring-async)
 
 `@Async` 는 간단히 말하자면, proxy 를 사용하여 비동기처리를 수행하는 방식이기 때문에, 무조건 같은 서비스내 호출이 아닌 다른 서비스 혹은 컨트롤러에서 서비스 호출등으로 프록시를 거치게 해야 합니다. 그래서 기존에 `WidgetService` 내에서 setting 하는 부분을 떼어내서 `WidgetAsyncService` 를 추가해서 메소드를 만들어주고 위에 어노테이션을 붙였습니다.
 
-    
-    	@Async
-    	public Future<Void> setDataV3(Widget widget, WidgetFilter filter) {
-    		logger.info("========== async  STARTTTT ========== " + widget.getTitle());
-    			
-    /*** 어쩌구 저쩌구 위젯을 가지고 타입별로 Dao 등과 연계해서 필요한 데이터를 불러오는 기능 
-    ***/
-    
-    		logger.info("========== async  ENDDDDDDDDDD ========== " + widget.getTitle());
-    		return new AsyncResult<>(null);
-    	}
+```java
+@Async
+public Future<Void> setDataV3(Widget widget, WidgetFilter filter) {
+	logger.info("========== async  STARTTTT ========== " + widget.getTitle());
 
-그리고 수행했는데 결과가 똑같.... 또 동기화된 트랜잭션이 없답니다. 
+	/*** 어쩌구 저쩌구 위젯을 가지고 타입별로 Dao 등과 연계해서 필요한 데이터를 불러오는 기능
+	***/
+
+	logger.info("========== async  ENDDDDDDDDDD ========== " + widget.getTitle());
+	return new AsyncResult<>(null);
+}
+```
+
+그리고 수행했는데 결과가 똑같.... 또 동기화된 트랜잭션이 없답니다.
 
 그래도 아까와 달리 이번엔 spring annotation 을 이용한 task executor 를 사용하고 있기에, 여기에 Transaction Propagation 을 적용해보았습니다. (참고로 compleatable future 를 사용할때는 propagation 을 적용해도 변화가 없었다.)
 
@@ -85,17 +90,19 @@ Async 를 사용하기 위한 전제조건은 상세한 설명들이 링크에 �
 
 이 케이스에서는 `Propagation.NEVER` 는 트랜잭션을 전달하지 않기에 위와 같은 오류가 날 것이므로, `NOT_SUPPORTED` 나 `REQUIRED_NEW` 가 필요한데, 어차피 조회만 하는 작업이기에 부모-자식 트랜잭션 상관없기에 `NOT_SUPPORTED` 로 하고 , `readOnly` 도 true 로 주었습니다.
 
-    // 비동기로 처리하는 부분 WidgetAsyncService 내.
-    	@Transactional(propagation = Propagation.NOT_SUPPORTED, readOnly = true)
-    	@Async
-    	public Future<Void> setDataV3(Widget widget, WidgetFilter filter) {
-    		logger.info("========== async  STARTTTT ========== " + widget.getTitle());
-    		/*** 어쩌구 저쩌구 위젯을 가지고 타입별로 Dao 등과 연계해서 필요한 데이터를 불러오는 기능 
-    		***/
-    		
-    		logger.info("========== async  ENDDDDDDDDDD ========== " + widget.getTitle());
-    		return new AsyncResult<>(null);
-    	}
+```java
+// 비동기로 처리하는 부분 WidgetAsyncService 내.
+@Transactional(propagation = Propagation.NOT_SUPPORTED, readOnly = true)
+@Async
+public Future<Void> setDataV3(Widget widget, WidgetFilter filter) {
+	logger.info("========== async  STARTTTT ========== " + widget.getTitle());
+	/*** 어쩌구 저쩌구 위젯을 가지고 타입별로 Dao 등과 연계해서 필요한 데이터를 불러오는 기능
+	***/
+
+	logger.info("========== async  ENDDDDDDDDDD ========== " + widget.getTitle());
+	return new AsyncResult<>(null);
+}
+```
 
 이번엔 성공한 코드이기 때문에 비동기를 부르는 동기부분 서비스까지도 추가!
 
@@ -103,69 +110,73 @@ Async 를 사용하기 위한 전제조건은 상세한 설명들이 링크에 �
 
 비동기 처리가 제대로 돌아가는지 보기 위해선 꼭 **로깅**이 필요합니다. 비동기 처리 부분이 제대로 동기 프로세스와 별개로 수행 되는지 보기 위해 비동기 메소드 수행 전/후, 비동기 메소드 안 시작과 끝에 로그를 추가했습니다
 
-    @Transactional
-    public PagingResult<Widget> getWidgetListByV3(WidgetFilter filter) {
-    		// dao 에 접속해 먼저 위젯 리스트 불러오기
-    		PagingResult<Widget> result = getDao().getListBy(filter);
-    		// 비동기 처리의 결과를 담을 array
-    		List<Future> futures = new ArrayList<>();
-    		logger.info(" ============== 111");
-    
-    		// 위젯마다 필요한 데이터 세팅
-    		for(Widget widget : result.getData()) {
-    			logger.info("========== method start ========== " + widget.getTitle());
-    			futures.add(widgetAsyncService.setDataV3(widget, filter));
-    			logger.info("========== method end ========== " + widget.getTitle());
-    		}
-    
-    
-    		logger.info(" ============== 222");
-    		// 완료대기
-    		for(Future future : futures) {
-    			try {
-    				// AsyncResult 와 같은 Future object 들은 get 을 이용해 결과 값을 받을때까지 wait 할 수 있다.
-    		    // 이 예제에선 void 형태의 리턴값 없는 비동기 메소드였지만, 결과 값이 필요한 경우 비동기메소드의 return 에서 AsyncResult 에 넣어주고
-    				// 아래 Future.get() 을 이용해 해당 값을 받아내서 처리할 수 있다.
-    				future.get();
-    			} catch(ExecutionException e) {
-    				e.printStackTrace();
-    			} catch(InterruptedException e) {
-    				e.printStackTrace();
-    			}
-    		}
-    
-    		logger.info(" ============== 333 ");
-    		// 위젯 필터링 및 정렬
-    		List<Widget> finalList = sortAndFilterWidget(result.getData());
-    
-    		result.setData(finalList);
-    		logger.info(" ============== 444 ");
-    		return result;
-    	}
+```java
+@Transactional
+public PagingResult<Widget> getWidgetListByV3(WidgetFilter filter) {
+	// dao 에 접속해 먼저 위젯 리스트 불러오기
+	PagingResult<Widget> result = getDao().getListBy(filter);
+	// 비동기 처리의 결과를 담을 array
+	List<Future> futures = new ArrayList<>();
+	logger.info(" ============== 111");
+
+	// 위젯마다 필요한 데이터 세팅
+	for(Widget widget : result.getData()) {
+		logger.info("========== method start ========== " + widget.getTitle());
+		futures.add(widgetAsyncService.setDataV3(widget, filter));
+		logger.info("========== method end ========== " + widget.getTitle());
+	}
+
+
+	logger.info(" ============== 222");
+	// 완료대기
+	for(Future future : futures) {
+		try {
+			// AsyncResult 와 같은 Future object 들은 get 을 이용해 결과 값을 받을때까지 wait 할 수 있다.
+			// 이 예제에선 void 형태의 리턴값 없는 비동기 메소드였지만, 결과 값이 필요한 경우 비동기메소드의 return 에서 AsyncResult 에 넣어주고
+			// 아래 Future.get() 을 이용해 해당 값을 받아내서 처리할 수 있다.
+			future.get();
+		} catch(ExecutionException e) {
+			e.printStackTrace();
+		} catch(InterruptedException e) {
+			e.printStackTrace();
+		}
+	}
+
+	logger.info(" ============== 333 ");
+	// 위젯 필터링 및 정렬
+	List<Widget> finalList = sortAndFilterWidget(result.getData());
+
+	result.setData(finalList);
+	logger.info(" ============== 444 ");
+	return result;
+}
+```
 
 만약, 비동기로 수행하는 부분이 결과값도 필요없는 경우라면 (count 를 올리거나, push 를 보내거나 하는 api response 에 필요한 부분이 아니라면) 위에 처럼 get 을 해서 굳이 결과값을 **기다릴 필요 없이 바로 return 해버리면 됩니다.**
 
 자 아무튼 그래서 위처럼 수행하면 예상되는 결과는 아래처럼 로그로 나옵니다.
 
-    //로그 내용이 많아 축약했습니다.
-    2019-02-03 02:20:25.234  INFO --- [-nio-8080-exec-5] c.example.service.WidgetService   [160] :  ============== 111
-    2019-02-03 02:20:25.242  INFO --- [-nio-8080-exec-5] c.example.service.WidgetService   [164] : ========== method start ========== 위젯 타이틀 A
-    2019-02-03 02:20:25.244  INFO --- [executor-task-19] c.example.service.WidgetAsyncService    [ 80] : ========== async  STARTTTT ========== 위젯 타이틀A
-    2019-02-03 02:20:25.244  INFO --- [-nio-8080-exec-5] c.example.service.WidgetService   [166] : ========== method end ========== 위젯 타이틀 A
-    2019-02-03 02:20:25.249  INFO --- [-nio-8080-exec-5] c.example.service.WidgetService   [164] : ========== method start ========== 위젯 타이틀 B
-    2019-02-03 02:20:25.250  INFO --- [-nio-8080-exec-5] c.example.service.WidgetService   [166] : ========== method end ========== 위젯 타이틀 B
-    2019-02-03 02:20:25.251  INFO --- [-nio-8080-exec-5] c.example.service.WidgetService   [164] : ========== method start ========== 위젯 타이틀 C
-    2019-02-03 02:20:25.251  INFO --- [-nio-8080-exec-5] c.example.service.WidgetService   [166] : ========== method end ========== 위젯 타이틀 C
-    2019-02-03 02:20:25.252  INFO --- [-nio-8080-exec-5] c.example.service.WidgetService   [170] :  ============== 222
-    2019-02-03 02:20:25.252  INFO --- [executor-task-19] c.example.service.WidgetAsyncService    [ 80] : ========== async  ENDDDDDDDDDD ========== 위젯 타이틀 A
-    2019-02-03 02:20:25.255  INFO --- [ executor-task-7] c.example.service.WidgetAsyncService    [ 80] : ========== async  STARTTTT ========== 위젯 타이틀 C
-    2019-02-03 02:20:25.255  INFO --- [ executor-task-1] c.example.service.WidgetAsyncService    [ 80] : ========== async  STARTTTT ========== 위젯 타이틀 B
-    2019-02-03 02:20:26.552  INFO --- [ executor-task-1] c.example.service.WidgetAsyncService    [293] : ========== async  ENDDDDDDDDDD ========== 위젯 타이틀 B
-    2019-02-03 02:20:26.674  INFO --- [ executor-task-7] c.example.service.WidgetAsyncService    [293] : ========== async  ENDDDDDDDDDD ========== 위젯 타이틀 C
-    2019-02-03 02:20:26.674  INFO --- [-nio-8080-exec-5] c.example.service.WidgetService   [182] :  ============== 333 
-    2019-02-03 02:20:26.675  INFO --- [-nio-8080-exec-5] c.example.service.WidgetService   [187] :  ============== 444
+```
+//로그 내용이 많아 축약했습니다.
+2019-02-03 02:20:25.234  INFO --- [-nio-8080-exec-5] c.example.service.WidgetService   [160] :  ============== 111
+2019-02-03 02:20:25.242  INFO --- [-nio-8080-exec-5] c.example.service.WidgetService   [164] : ========== method start ========== 위젯 타이틀 A
+2019-02-03 02:20:25.244  INFO --- [executor-task-19] c.example.service.WidgetAsyncService    [ 80] : ========== async  STARTTTT ========== 위젯 타이틀A
+2019-02-03 02:20:25.244  INFO --- [-nio-8080-exec-5] c.example.service.WidgetService   [166] : ========== method end ========== 위젯 타이틀 A
+2019-02-03 02:20:25.249  INFO --- [-nio-8080-exec-5] c.example.service.WidgetService   [164] : ========== method start ========== 위젯 타이틀 B
+2019-02-03 02:20:25.250  INFO --- [-nio-8080-exec-5] c.example.service.WidgetService   [166] : ========== method end ========== 위젯 타이틀 B
+2019-02-03 02:20:25.251  INFO --- [-nio-8080-exec-5] c.example.service.WidgetService   [164] : ========== method start ========== 위젯 타이틀 C
+2019-02-03 02:20:25.251  INFO --- [-nio-8080-exec-5] c.example.service.WidgetService   [166] : ========== method end ========== 위젯 타이틀 C
+2019-02-03 02:20:25.252  INFO --- [-nio-8080-exec-5] c.example.service.WidgetService   [170] :  ============== 222
+2019-02-03 02:20:25.252  INFO --- [executor-task-19] c.example.service.WidgetAsyncService    [ 80] : ========== async  ENDDDDDDDDDD ========== 위젯 타이틀 A
+2019-02-03 02:20:25.255  INFO --- [ executor-task-7] c.example.service.WidgetAsyncService    [ 80] : ========== async  STARTTTT ========== 위젯 타이틀 C
+2019-02-03 02:20:25.255  INFO --- [ executor-task-1] c.example.service.WidgetAsyncService    [ 80] : ========== async  STARTTTT ========== 위젯 타이틀 B
+2019-02-03 02:20:26.552  INFO --- [ executor-task-1] c.example.service.WidgetAsyncService    [293] : ========== async  ENDDDDDDDDDD ========== 위젯 타이틀 B
+2019-02-03 02:20:26.674  INFO --- [ executor-task-7] c.example.service.WidgetAsyncService    [293] : ========== async  ENDDDDDDDDDD ========== 위젯 타이틀 C
+2019-02-03 02:20:26.674  INFO --- [-nio-8080-exec-5] c.example.service.WidgetService   [182] :  ============== 333
+2019-02-03 02:20:26.675  INFO --- [-nio-8080-exec-5] c.example.service.WidgetService   [187] :  ============== 444
+```
 
-111 부분이 순차적으로 수행되고, 비동기 메소드가 위젯 숫자만큼 실행되는데, 메소드 전후의 로그들이 비동기이기에 바로 순서대로 쭉 실행 되면서 루프가 끝나면 바로 222가 찍힙니다. 그와 동시에 위젯 내용을 불러서 세팅하는 메소드들이 동시 다발적으로 Async 작업을 시작하고 개별적으로 끝나게 됩니다. 
+111 부분이 순차적으로 수행되고, 비동기 메소드가 위젯 숫자만큼 실행되는데, 메소드 전후의 로그들이 비동기이기에 바로 순서대로 쭉 실행 되면서 루프가 끝나면 바로 222가 찍힙니다. 그와 동시에 위젯 내용을 불러서 세팅하는 메소드들이 동시 다발적으로 Async 작업을 시작하고 개별적으로 끝나게 됩니다.
 
 **즉 222를 찍는 부분과 각 위젯내용을 비동기로 불러오는 부분은 서로 병렬하게 진행됩니다.**
 

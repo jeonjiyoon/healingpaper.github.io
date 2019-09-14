@@ -67,7 +67,7 @@ BrewFile 에 brew, cask, mas 의 설치 목록을 저장해 놓으면, Homebrew 
 
 예제
 
-```
+```yaml
 # BrewFile
 brew "asdf"
 brew "awscli"
