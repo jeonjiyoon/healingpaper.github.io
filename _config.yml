@@ -28,6 +28,7 @@
 
 title: Healingpaper 기술블로그
 email: dev@healingpaper.com
+lang: "ko"
 description: >- # this means to ignore newlines until "baseurl:"
   힐링페이퍼의 개발팀이 지식을 공유하는 공간입니다.
 baseurl: "" # the subpath of your site, e.g. /blog
