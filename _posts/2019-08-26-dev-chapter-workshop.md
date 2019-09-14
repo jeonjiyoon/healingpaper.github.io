@@ -1,6 +1,6 @@
 ---
 title: '개발챕터 워크샵 돌아보기'
-describe:
+description:
 categories: [Culture]
 tags: [Culture, Workshop]
 author: Chichi

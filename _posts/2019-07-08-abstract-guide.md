@@ -1,6 +1,6 @@
 ---
 title: "Abstract Guide: Abstract 기본 사용법"
-describe:
+description:
 categories: [Design]
 tags: [Design, Abstract, Design System, Sketch]
 author: Jane Jeon

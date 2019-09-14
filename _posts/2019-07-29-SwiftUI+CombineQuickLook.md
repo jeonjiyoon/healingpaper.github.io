@@ -1,6 +1,6 @@
 ---
 title:  "SwiftUI + Combine 핥아보기" 
-describe:
+description:
 categories: [iOS]   
 tags: [SwiftUI, Combine, WWDC2019]   
 author: Shirou Bae

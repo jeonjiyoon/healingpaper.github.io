@@ -14,7 +14,7 @@ layout: default
           {{ post.title | escape }}
         </a>
       </h1>
-      <div class="post-describe">{{ post.describe | escape }}</div>
+      <div class="post-description">{{ post.description | escape }}</div>
       <div class="post-tag">
         {% for tag in post.tags %}
         <span class="tag">{{ tag }}</span>

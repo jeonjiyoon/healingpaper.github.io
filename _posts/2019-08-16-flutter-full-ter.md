@@ -1,6 +1,6 @@
 ---
 title: "플러터 풀로 털기"
-describe:
+description:
 categories: [Web]
 tags: [Flutter, Dart]
 author: Chichi

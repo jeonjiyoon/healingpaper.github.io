@@ -2,7 +2,7 @@
 
 layout: post
 title: Coroutine Basic
-describe:
+description:
 categories: [Android]
 tags: [Coroutine, Kotlin, Android]
 author: David Ha

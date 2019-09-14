@@ -1,6 +1,6 @@
 ---
 title: "Homebrew 로 Mac 한 방에 셋업하기"
-describe: 언제까지 Mac 설정에 하루 종일 시간을 쓸 것인가?
+description: 언제까지 Mac 설정에 하루 종일 시간을 쓸 것인가?
 categories: [Setting]
 tags: [Setting, Mac]
 author: JSon

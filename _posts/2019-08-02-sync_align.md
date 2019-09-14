@@ -1,6 +1,6 @@
 ---
 title: "힐링페이퍼의 온보딩은 어떤 모습일까"
-describe: "'힐링페이퍼 생활 가이드'와 'Sync & Align 프로그램'"
+description: "'힐링페이퍼 생활 가이드'와 'Sync & Align 프로그램'"
 categories: [Culture]
 tags: [Culture, Onboarding]
 author: JSon
