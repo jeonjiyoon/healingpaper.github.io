@@ -69,5 +69,6 @@ defaults:
       path: ""
     values:
       layout: "default"
+      image: "/assets/images/healingpaper.png"
 
 #permalink: /:categories/:year/:month/:day/:title:output_ext
