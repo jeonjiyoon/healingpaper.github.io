@@ -3,6 +3,15 @@
 @import "main";
 @import "highlight";
 
+h1, h2, h3, h4, h5 {
+  font-weight: 600 !important;
+  line-height: 1.3;
+}
+
+h1 {
+  margin-bottom: 10px;
+}
+
 .custom-site-header .wrapper {
   padding: 40px 15px;
 }
@@ -77,14 +86,14 @@
   }
 
   h1 {
-    margin-bottom: 0;
+    margin-bottom: 4px;
   }
 }
 
 .post-author-image {
   width: 72px;
   height: 72px;
-  border-radius: 50%;
+  border-radius: 50% !important;
   cursor: inherit !important;
 
   @media screen and (max-width: 600px) {
@@ -98,7 +107,7 @@
 .post-inner-author-image {
   width: 24px;
   height: 24px;
-  border-radius: 50%;
+  border-radius: 50% !important;
   cursor: inherit !important;
 }
 
@@ -110,6 +119,11 @@
   .post-author-link {
     font-weight: 600;
     color: #555555;
+
+    img {
+      margin-top: 0;
+      margin-bottom: 0;
+    }
   }
 
   @media screen and (max-width: 600px) {
@@ -119,7 +133,6 @@
 
 .post-link {
   font-size: 28px !important;
-  font-weight: bold;
   color: #222222;
 
   &:visited {
@@ -232,12 +245,19 @@
 
 .page-heading {
   font-size: 32px !important;
-  font-weight: bold;
 }
 
 .page-content:not(.custom-page-content) {
   hr {
+    height: 1px;
+    color: #efefef;
+    background-color:#efefef;
+    border: none;
     margin: 30px 0;
+  }
+
+  blockquote {
+    font-style: normal !important;
   }
 
   .center {
@@ -248,13 +268,17 @@
 
   img, video {
     margin-top: 30px;
-    margin-bottom: 30px;
+    margin-bottom: 24px;
     cursor: zoom-in;
+  }
+
+  img {
+    border-radius: 4px;
   }
 
   figure {
     margin-top: 30px;
-    margin-bottom: 30px;
+    margin-bottom: 24px;
 
     > * {
       margin-bottom: 10px;
@@ -262,6 +286,16 @@
 
     figcaption {
       text-align: center;
+    }
+  }
+
+  .highlighter-rouge {
+    border: none;
+    border-radius: 4px;
+    vertical-align: middle;
+
+    .highlight {
+      border-radius: 4px;
     }
   }
 }
@@ -283,15 +317,5 @@
     max-width: 80%;
     margin: 0 auto;
     cursor: zoom-out;
-  }
-}
-
-.highlighter-rouge {
-  border: none;
-  border-radius: 4px;
-  vertical-align: middle;
-
-  .highlight {
-    border-radius: 4px;
   }
 }
