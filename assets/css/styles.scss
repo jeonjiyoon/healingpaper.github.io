@@ -247,7 +247,9 @@ h1 {
   font-size: 32px !important;
 }
 
-.page-content:not(.custom-page-content) {
+.post-content {
+  padding: 30px 0;
+
   hr {
     height: 1px;
     color: #efefef;
