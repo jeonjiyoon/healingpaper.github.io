@@ -41,6 +41,9 @@ plugins:
   - jekyll-feed
   - jekyll-sitemap
 
+kramdown:
+  smart_quotes: ["apos", "apos", "quot", "quot"]
+
 collections:
   authors:
     output: true
