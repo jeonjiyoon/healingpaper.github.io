@@ -1,5 +1,5 @@
 ---
-title: "Abstract Guide: 힐페 디자인챕터에서 Abstract 똑똑하게 사용하는 방법"
+title: "힐페 디자인챕터에서 Abstract 똑똑하게 사용하는 방법"
 description:
 categories: [Design]
 tags: [Design, Abstract, Design System, Sketch]
