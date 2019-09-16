@@ -95,6 +95,7 @@ h1 {
   height: 72px;
   border-radius: 50% !important;
   cursor: inherit !important;
+  object-fit: cover;
 
   @media screen and (max-width: 600px) {
     & {
@@ -109,6 +110,7 @@ h1 {
   height: 24px;
   border-radius: 50% !important;
   cursor: inherit !important;
+  object-fit: cover;
 }
 
 .post-top {
@@ -229,6 +231,7 @@ h1 {
     height: 100px;
     margin-right: 1.2em;
     border-radius: 50%;
+    object-fit: cover;
   }
   .info {
     .name {
