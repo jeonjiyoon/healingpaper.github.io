@@ -1,5 +1,5 @@
 ---
-title: "Abstract Guide: Abstract 기본 사용법"
+title: "Abstract 기본 사용법"
 description:
 categories: [Design]
 tags: [Design, Abstract, Design System, Sketch]
