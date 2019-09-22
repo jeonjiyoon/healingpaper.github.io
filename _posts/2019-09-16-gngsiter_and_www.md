@@ -1,5 +1,5 @@
 ---
-title: "드라마 검블유를 통해 보는 강남언니의 플랫폼으로서의 역할"
+title: "검블유 속에 강남언니가?"
 description: "드라마 검블유를 통해 보는 강남언니의 플랫폼으로서의 역할"
 categories: [Culture]
 tags: [Culture, Platform, 검블유]
