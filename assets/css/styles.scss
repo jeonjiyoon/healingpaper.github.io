@@ -332,12 +332,12 @@ h1 {
   margin-bottom: 10px;
 
   .post-nav-prev {
-    max-width: 50%;
+    flex: 1 0 50%;
     text-align: left;
   }
 
   .post-nav-next {
-    max-width: 50%;
+    flex: 1 0 50%;
     text-align: right;
   }
 }
