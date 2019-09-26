@@ -4,6 +4,7 @@ description: 'Spring 에서 @Async 를 이용한 동시다발적인 Hibernate DB
 categories: [Spring]
 tags: [Spring, Async, Hibernate, Thread, Transaction]
 author: Brown Kimyoon
+redirect_from: "/spring/2019/09/03/Spring-Async-Hibernate-DB.html"
 ---
 
 요번 글에서 다루고자 하는 점은

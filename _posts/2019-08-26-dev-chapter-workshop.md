@@ -4,6 +4,7 @@ description:
 categories: [Culture]
 tags: [Culture, Workshop]
 author: Chichi
+redirect_from: "/culture/2019/08/26/dev-chapter-workshop.html"
 ---
 
 # 시작하며

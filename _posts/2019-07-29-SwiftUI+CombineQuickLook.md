@@ -4,6 +4,7 @@ description:
 categories: [iOS]   
 tags: [SwiftUI, Combine, WWDC2019]   
 author: Shirou Bae
+redirect_from: "/ios/2019/07/29/SwiftUI+CombineQuickLook.html"
 ---
 
 # SwiftUI란?

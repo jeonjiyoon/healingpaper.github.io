@@ -4,7 +4,7 @@ description:
 categories: [Design]
 tags: [Design, Abstract, Design System, Sketch]
 author: Jane Jeon
-
+redirect_from: "/design/2019/07/08/how-to-use-abstract.html"
 ---
 
 안녕하세요. 힐링페이퍼의 프로덕트 디자이너 Jane입니다.

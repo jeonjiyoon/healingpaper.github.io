@@ -4,6 +4,7 @@ description:
 categories: [Web]
 tags: [Flutter, Dart]
 author: Chichi
+redirect_from: "/web/2019/08/16/flutter-full-ter.html"
 ---
 
 # Flutter가 뭔가요?

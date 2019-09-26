@@ -1,11 +1,11 @@
 ---
-
 layout: post
 title: Coroutine Basic
 description:
 categories: [Android]
 tags: [Coroutine, Kotlin, Android]
 author: David Ha
+redirect_from: "/android/2019/08/20/coroutine_basic.html"
 ---
 
 

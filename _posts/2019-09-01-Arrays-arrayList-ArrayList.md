@@ -4,6 +4,7 @@ description: 'Arrays.arrayList 는 ArrayList 와 다르다'
 categories: [Java]
 tags: [Java, Array, List, Collection]
 author: Brown Kimyoon
+redirect_from: "/java/2019/09/01/Arrays-arrayList-ArrayList.html"
 ---
 
 

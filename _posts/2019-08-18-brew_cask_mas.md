@@ -4,6 +4,9 @@ description: 언제까지 Mac 설정에 하루 종일 시간을 쓸 것인가?
 categories: [Tool]
 tags: [Tool, Setting, Mac]
 author: JSon
+redirect_from:
+  - /setting/2019/08/18/brew_cask_mas.html
+  - /tool/2019/08/18/brew_cask_mas.html
 ---
 
 안녕하세요, 힐링페이퍼에서 백엔드를 담당하고 있는 제이슨입니다!\\

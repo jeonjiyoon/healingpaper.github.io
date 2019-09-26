@@ -40,6 +40,7 @@ theme: minima
 plugins:
   - jekyll-feed
   - jekyll-sitemap
+  - jekyll-redirect-from
 
 kramdown:
   smart_quotes: ["apos", "apos", "quot", "quot"]
@@ -77,4 +78,4 @@ defaults:
       layout: "default"
       image: "/assets/images/healingpaper.png"
 
-#permalink: /:categories/:year/:month/:day/:title:output_ext
+permalink: /:year/:month/:day/:title:output_ext

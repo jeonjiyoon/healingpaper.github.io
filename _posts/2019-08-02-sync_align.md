@@ -4,6 +4,7 @@ description: "'힐링페이퍼 생활 가이드'와 'Sync & Align 프로그램'"
 categories: [Culture]
 tags: [Culture, Onboarding]
 author: JSon
+redirect_from: "/culture/2019/08/02/sync_align.html"
 ---
 
 안녕하세요, 힐링페이퍼에서 백엔드를 담당하고 있는 제이슨입니다! \\

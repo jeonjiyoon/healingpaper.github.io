@@ -4,8 +4,7 @@ description:
 categories: [Design]
 tags: [Design, Abstract, Design System, Sketch]
 author: Jane Jeon
-
-
+redirect_from: "/design/2019/07/08/abstract-guide.html"
 ---
 
 <a href="https://healingpaper.github.io/design/2019/07/08/how-to-use-abstract.html" target="_blank">Abstract Guide: 힐페 디자인챕터에서 Abstract 똑똑하게 사용하는 방법</a> 에서 언급한 용어와 기본 사용법을 따로 글로 작성한 페이지입니다. 몇가지 케이스에 따라 기본 가이드를 작성해둔 것이니, Abstract를 처음 접하시는 분들은 아래 내용을 따라 테스트 작업을 해보시는 것을 추천드립니다. (참고로 2명 이상이 함께 테스트를 해보는 것이 Resolve Confilcts나 Review Request 등 다양한 상황을 경험하실 수 있어요.)

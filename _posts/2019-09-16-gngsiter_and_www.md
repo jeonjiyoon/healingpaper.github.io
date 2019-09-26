@@ -4,6 +4,7 @@ description: "드라마 검블유를 통해 보는 강남언니의 플랫폼으�
 categories: [Culture]
 tags: [Culture, Platform, 검블유]
 author: Hailey Shin
+redirect_from: "/culture/2019/09/16/gngsiter_and_www.html"
 ---
 
 ## 검색어를 입력하세요 WWW' (= 검블유)
