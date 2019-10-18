@@ -148,13 +148,13 @@ redirect_from: "/design/2019/07/08/how-to-use-abstract.html"
 
 - Abstract에 아직 Commit하기 전인데 파일이 날아갔어요. 또는 Abstract 버그로 인해 파일을 찾을 수가 없어요. 하는 경우 파일 찾는 방법!
 
-  Abstract에서 Branch를 생성하면 다음과 같은 경로에 파일이 생성되니 확인해주세요!
+  Abstract에서 Branch를 생성하면 로컬 경로에 스케치 파일이 생성되니 확인해주세요!
 
   1. shift + command + '.' 단축키를 통해 숨김파일 보기를 설정합니다.
 
   2. 다음과 같은 경로를 타고 이동해주세요.
 
-     Machintosh HD > Users > 사용자명 > Library > Application Support > Abstract > Documents > com.bohemiancoding.sketch3 > Edits > 짜란
+     Machintosh HD > Users > 사용자명 > .Abstract > Documents > com.bohemiancoding.sketch3 > Edits > 짜란
 
      
 
