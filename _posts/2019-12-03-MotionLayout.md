@@ -21,8 +21,6 @@ author: Thomas
 
 지금부터 MotionLayout 을 한번 훑어보려 합니다.
 
-### 
-
 ### MotionLayout 특징
 
 1. MotionLayout 은 ConstraintLayout 을 상속받은 ViewGroup 입니다.
