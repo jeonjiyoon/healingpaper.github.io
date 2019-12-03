@@ -65,28 +65,31 @@ MotionLayout 은 MotionScene 을 레퍼런싱 하고, 애니메이션 관련된 
 
 위와 같이 터치에 따라 움직이는 뷰를 만들기 위해 먼저 MotionLayout xml 파일을 만듭니다.
 
-    <?xml version="1.0" encoding="utf-8"?>
-    <androidx.constraintlayout.motion.widget.MotionLayout xmlns:android="http://schemas.android.com/apk/res/android"
-            xmlns:app="http://schemas.android.com/apk/res-auto"
-            xmlns:tools="http://schemas.android.com/tools"
-            android:id="@+id/motionLayout"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            app:layoutDescription="@xml/scene_01"
-            tools:showPaths="true">
-    
-        <View
-                android:id="@+id/button"
-                android:layout_width="64dp"
-                android:layout_height="64dp"
-                android:background="@color/colorAccent" />
-    
-    </androidx.constraintlayout.motion.widget.MotionLayout>
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.motion.widget.MotionLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/motionLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layoutDescription="@xml/scene_01"
+        tools:showPaths="true">
+
+<View
+        android:id="@+id/button"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:background="@color/colorAccent" />
+
+</androidx.constraintlayout.motion.widget.MotionLayout>
+```
 
 motion_layout_ex1.xml
 
 id:button 인 View 가 애니메이션 할 대상이며, 위치에 대한 정의는 하지 않아도 됩니다. MotionLayout 의 app:layoutDescription 속성으로 scene_01 을 설정해 주었는데, 바로 모든 애니메이션 관련 내용이 들어갈 MotionScene 을 정의한 파일입니다.
 
+```xml
     <?xml version="1.0" encoding="utf-8"?>
     <MotionScene xmlns:motion="http://schemas.android.com/apk/res-auto">
     
@@ -101,13 +104,14 @@ id:button 인 View 가 애니메이션 할 대상이며, 위치에 대한 정의
     
         </Transition>
     </MotionScene>
+```
 
 scene_01.xml
 
 MotionScene 안에 Transition 을 정의하고, motion:constraintSetStart 와 motion:constraintSetEnd 속성으로 layout 들을 설정해주었습니다. 이 layout 들은 각각 애니메이션의 시작과 끝의 View 의 위치를 정의해놓은 파일입니다.
 
 그리고 Transition 안에 OnSwipe 핸들러를 정의해 사용자의 터치에 반응하도록 하였습니다. motion:touchAnchorId 로 애니메이션 처리할 뷰의 id 를 등록해 주었으며, 그 외의 속성들은 간단한 사용법만을 전달하기 위해 뒤에서 다루겠습니다.
-
+```xml
     <?xml version="1.0" encoding="utf-8"?>
     <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
             xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -124,26 +128,26 @@ MotionScene 안에 Transition 을 정의하고, motion:constraintSetStart 와 mo
                 app:layout_constraintTop_toTopOf="parent" />
     
     </androidx.constraintlayout.widget.ConstraintLayout>
-
+```
 motion_cl_start.xml
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-    <?xml version="1.0" encoding="utf-8"?>
-    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-            xmlns:app="http://schemas.android.com/apk/res-auto"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-    
-        <View
-                android:id="@+id/button"
-                android:layout_width="64dp"
-                android:layout_height="64dp"
-                android:layout_marginEnd="8dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-    
-    </androidx.constraintlayout.widget.ConstraintLayout>
+<View
+        android:id="@+id/button"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:layout_marginEnd="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
+</androidx.constraintlayout.widget.ConstraintLayout>
+```
 motion_cl_end.xml
 
 Transition 에 정의해둔 애니메이션의 시작과 끝 layout xml 파일입니다.
@@ -155,79 +159,79 @@ Transition 에 정의해둔 애니메이션의 시작과 끝 layout xml 파일�
 ### ConstraintSet 사용 예제
 
 ![image2](/assets/images/thomas/motionlayout/image_2.gif)
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.motion.widget.MotionLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/motionLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layoutDescription="@xml/scene_02"
+        app:showPaths="true">
 
-    <?xml version="1.0" encoding="utf-8"?>
-    <androidx.constraintlayout.motion.widget.MotionLayout xmlns:android="http://schemas.android.com/apk/res/android"
-            xmlns:app="http://schemas.android.com/apk/res-auto"
-            android:id="@+id/motionLayout"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            app:layoutDescription="@xml/scene_02"
-            app:showPaths="true">
-    
-        <View
-                android:id="@+id/button"
-                android:layout_width="64dp"
-                android:layout_height="64dp"
-                android:background="@color/colorAccent" />
-    
-    </androidx.constraintlayout.motion.widget.MotionLayout>
+<View
+        android:id="@+id/button"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:background="@color/colorAccent" />
 
+</androidx.constraintlayout.motion.widget.MotionLayout>
+```
 motion_layout_ex2.xml
 
 동일하게 MotionLayout layout xml 을 만들고, layoutDescription 으로 scene_02.xml 을 참조해주었습니다.
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<MotionScene xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:motion="http://schemas.android.com/apk/res-auto">
 
-    <?xml version="1.0" encoding="utf-8"?>
-    <MotionScene xmlns:android="http://schemas.android.com/apk/res/android"
-            xmlns:motion="http://schemas.android.com/apk/res-auto">
-    
-        <Transition
-                motion:constraintSetEnd="@id/end"
-                motion:constraintSetStart="@id/start"
-                motion:motionInterpolator="linear">
-    
-            <OnSwipe
-                    motion:dragDirection="dragLeft"
-                    motion:touchAnchorId="@+id/button"
-                    motion:touchAnchorSide="right" />
-        </Transition>
-    
-        <!--  ConstraintSet 을 통해 background color 조정  -->
-        <ConstraintSet android:id="@+id/start">
-            <Constraint
-                    android:id="@+id/button"
-                    android:layout_width="64dp"
-                    android:layout_height="64dp"
-                    android:layout_marginStart="8dp"
-                    motion:layout_constraintBottom_toBottomOf="parent"
-                    motion:layout_constraintStart_toStartOf="parent"
-                    motion:layout_constraintTop_toTopOf="parent">
-    
-                <CustomAttribute
-                        motion:attributeName="backgroundColor"
-                        motion:customColorValue="@color/colorPrimary" />
-    
-            </Constraint>
-        </ConstraintSet>
-    
-        <ConstraintSet android:id="@+id/end">
-            <Constraint
-                    android:id="@+id/button"
-                    android:layout_width="64dp"
-                    android:layout_height="32dp"
-                    android:layout_marginEnd="8dp"
-                    motion:layout_constraintBottom_toBottomOf="parent"
-                    motion:layout_constraintEnd_toEndOf="parent"
-                    motion:layout_constraintTop_toTopOf="parent">
-    
-                <CustomAttribute
-                        motion:attributeName="backgroundColor"
-                        motion:customColorValue="@color/colorAccent" />
-    
-            </Constraint>
-        </ConstraintSet>
-    </MotionScene>
+<Transition
+        motion:constraintSetEnd="@id/end"
+        motion:constraintSetStart="@id/start"
+        motion:motionInterpolator="linear">
 
+        <OnSwipe
+                motion:dragDirection="dragLeft"
+                motion:touchAnchorId="@+id/button"
+                motion:touchAnchorSide="right" />
+</Transition>
+
+<!--  ConstraintSet 을 통해 background color 조정  -->
+<ConstraintSet android:id="@+id/start">
+        <Constraint
+                android:id="@+id/button"
+                android:layout_width="64dp"
+                android:layout_height="64dp"
+                android:layout_marginStart="8dp"
+                motion:layout_constraintBottom_toBottomOf="parent"
+                motion:layout_constraintStart_toStartOf="parent"
+                motion:layout_constraintTop_toTopOf="parent">
+
+        <CustomAttribute
+                motion:attributeName="backgroundColor"
+                motion:customColorValue="@color/colorPrimary" />
+
+        </Constraint>
+</ConstraintSet>
+
+<ConstraintSet android:id="@+id/end">
+        <Constraint
+                android:id="@+id/button"
+                android:layout_width="64dp"
+                android:layout_height="32dp"
+                android:layout_marginEnd="8dp"
+                motion:layout_constraintBottom_toBottomOf="parent"
+                motion:layout_constraintEnd_toEndOf="parent"
+                motion:layout_constraintTop_toTopOf="parent">
+
+        <CustomAttribute
+                motion:attributeName="backgroundColor"
+                motion:customColorValue="@color/colorAccent" />
+
+        </Constraint>
+</ConstraintSet>
+</MotionScene>
+```
 scene_02.xml
 
 기본예제와 다르게, Transition 의 motion:constraintSetStart, motion:constraintSetEnd 속성에 레이아웃 파일이 아닌 ConstraintSet 의 id를 설정해주었습니다. Constraint 에는 layout_height 가 변경되도록 설정하고 CustomAttribute 로 backgroundColor 도 설정해주었습니다. CustomAttribute 는 타겟 뷰가 가지고 있는 여러 속성들을 설정해줄 수 있습니다. attributeName 은 타겟뷰의 getter/setter 메소드명과 동일하게 해주면 되고, value 는 color, Integer, Float, Dimension, String 등 값을 설정해줄 수 있습니다.
@@ -244,80 +248,80 @@ ConstraintSet 사용법을 간단히 살펴보았습니다.
 ![image3](/assets/images/thomas/motionlayout/image_3.gif)
 
 타겟뷰에 ImageFilterView 를 사용해서 이미지가 변경되는 애니메이션을 만들어보겠습니다.
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.motion.widget.MotionLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/motionLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layoutDescription="@xml/scene_03"
+        app:showPaths="true">
 
-    <?xml version="1.0" encoding="utf-8"?>
-    <androidx.constraintlayout.motion.widget.MotionLayout xmlns:android="http://schemas.android.com/apk/res/android"
-            xmlns:app="http://schemas.android.com/apk/res-auto"
-            android:id="@+id/motionLayout"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            app:layoutDescription="@xml/scene_03"
-            app:showPaths="true">
-    
-        <androidx.constraintlayout.utils.widget.ImageFilterView
-                android:id="@+id/image"
-                android:layout_width="64dp"
-                android:layout_height="64dp"
-                android:background="@color/white"
-                android:src="@drawable/ic_999_icon_gnb_info_off"
-                app:altSrc="@drawable/ic_999_icon_gnb_info_on" />
-    
-    </androidx.constraintlayout.motion.widget.MotionLayout>
+<androidx.constraintlayout.utils.widget.ImageFilterView
+        android:id="@+id/image"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:background="@color/white"
+        android:src="@drawable/ic_999_icon_gnb_info_off"
+        app:altSrc="@drawable/ic_999_icon_gnb_info_on" />
 
+</androidx.constraintlayout.motion.widget.MotionLayout>
+```
 motion_layout_ex3.xml
 
 타겟뷰에 ImageFilterView 를 사용했습니다. ImageFilterView 는 AppCompatImageView 를 상속받는 뷰로 이미지에 여러가지 효과를 줄 수 있는 뷰입니다. src 에 변경전 이미지를, altSrc 에 변경후 이미지를 세팅해주었습니다. (png 이든 벡터 이미지든 상관없이 정상동작합니다)
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<MotionScene xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:motion="http://schemas.android.com/apk/res-auto">
 
-    <?xml version="1.0" encoding="utf-8"?>
-    <MotionScene xmlns:android="http://schemas.android.com/apk/res/android"
-            xmlns:motion="http://schemas.android.com/apk/res-auto">
-    
         <Transition
                 motion:constraintSetEnd="@id/end"
                 motion:constraintSetStart="@id/start"
                 motion:motionInterpolator="linear">
-    
-            <OnSwipe
-                    motion:dragDirection="dragLeft"
-                    motion:touchAnchorId="@+id/image"
-                    motion:touchAnchorSide="right" />
+
+                <OnSwipe
+                        motion:dragDirection="dragLeft"
+                        motion:touchAnchorId="@+id/image"
+                        motion:touchAnchorSide="right" />
         </Transition>
-    
+
         <ConstraintSet android:id="@+id/start">
-            <Constraint
-                    android:id="@+id/image"
-                    android:layout_width="64dp"
-                    android:layout_height="64dp"
-                    android:layout_marginStart="8dp"
-                    motion:layout_constraintBottom_toBottomOf="parent"
-                    motion:layout_constraintStart_toStartOf="parent"
-                    motion:layout_constraintTop_toTopOf="parent">
-    
+                <Constraint
+                        android:id="@+id/image"
+                        android:layout_width="64dp"
+                        android:layout_height="64dp"
+                        android:layout_marginStart="8dp"
+                        motion:layout_constraintBottom_toBottomOf="parent"
+                        motion:layout_constraintStart_toStartOf="parent"
+                        motion:layout_constraintTop_toTopOf="parent">
+
                 <CustomAttribute
                         motion:attributeName="crossfade"
                         motion:customFloatValue="0" />
-    
-            </Constraint>
+
+                </Constraint>
         </ConstraintSet>
-    
+
         <ConstraintSet android:id="@+id/end">
-            <Constraint
-                    android:id="@+id/image"
-                    android:layout_width="64dp"
-                    android:layout_height="64dp"
-                    android:layout_marginEnd="8dp"
-                    motion:layout_constraintBottom_toBottomOf="parent"
-                    motion:layout_constraintEnd_toEndOf="parent"
-                    motion:layout_constraintTop_toTopOf="parent">
-    
+                <Constraint
+                        android:id="@+id/image"
+                        android:layout_width="64dp"
+                        android:layout_height="64dp"
+                        android:layout_marginEnd="8dp"
+                        motion:layout_constraintBottom_toBottomOf="parent"
+                        motion:layout_constraintEnd_toEndOf="parent"
+                        motion:layout_constraintTop_toTopOf="parent">
+
                 <CustomAttribute
                         motion:attributeName="crossfade"
                         motion:customFloatValue="1" />
-    
-            </Constraint>
-        </ConstraintSet>
-    </MotionScene>
 
+                </Constraint>
+        </ConstraintSet>
+</MotionScene>
+```
 scene_03.xml
 
 이번에는 CustomAttribute 에 crossfade 라는 속성을 설정해주었습니다.ImageFilterView 에는 public void setCrossfade(float crossfade) 라는 함수가 있기에 가능한 것입니다.
@@ -329,106 +333,106 @@ scene_03.xml
 ![image4](/assets/images/thomas/motionlayout/image_4.gif)
 
 MotionLayout 의 기본 아이디어는 애니메이션의 시작과 끝의 상태인 “resting state” 를 ConstraintSet 으로 구현하는 것입니다. 여기에 KeyFrameSet 을 사용하면 시작과 끝 사이지점의 상태 또한 구현할 수 있습니다. ( 이는 resting state 는 아니고 단순히 지나가는 state 입니다. )
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.motion.widget.MotionLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/motionLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layoutDescription="@xml/scene_04"
+        app:showPaths="true">
 
-    <?xml version="1.0" encoding="utf-8"?>
-    <androidx.constraintlayout.motion.widget.MotionLayout xmlns:android="http://schemas.android.com/apk/res/android"
-            xmlns:app="http://schemas.android.com/apk/res-auto"
-            android:id="@+id/motionLayout"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            app:layoutDescription="@xml/scene_04"
-            app:showPaths="true">
-    
-        <View
-                android:id="@+id/button"
-                android:layout_width="64dp"
-                android:layout_height="64dp"
-                android:background="@color/colorAccent" />
-    
-    </androidx.constraintlayout.motion.widget.MotionLayout>
+<View
+        android:id="@+id/button"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:background="@color/colorAccent" />
 
+</androidx.constraintlayout.motion.widget.MotionLayout>
+```
 motion_layout_ex4.xml
 
 layoutDescription 으로 scene_04.xml 을 설정해주었습니다.
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<MotionScene xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:motion="http://schemas.android.com/apk/res-auto">
 
-    <?xml version="1.0" encoding="utf-8"?>
-    <MotionScene xmlns:android="http://schemas.android.com/apk/res/android"
-            xmlns:motion="http://schemas.android.com/apk/res-auto">
-    
-        <Transition
-                motion:constraintSetEnd="@id/end"
-                motion:constraintSetStart="@id/start"
-                motion:motionInterpolator="linear">
-    
-            <OnSwipe
-                    motion:dragDirection="dragLeft"
-                    motion:touchAnchorId="@+id/button"
-                    motion:touchAnchorSide="right" />
-    
-            <KeyFrameSet>
-    
-                <KeyAttribute
-                        android:rotation="-45"
-                        android:scaleX="2"
-                        android:scaleY="2"
-                        motion:framePosition="50"
-                        motion:motionTarget="@+id/button" />
-                
-                <KeyPosition
-                        motion:framePosition="50"
-                        motion:keyPositionType="parentRelative"
-                        motion:motionTarget="@+id/button"
-                        motion:percentY="0.25" />
-            </KeyFrameSet>
-        </Transition>
-    
-        <ConstraintSet android:id="@+id/start">
-            <Constraint
-                    android:id="@+id/button"
-                    android:layout_width="64dp"
-                    android:layout_height="64dp"
-                    android:layout_marginStart="8dp"
-                    motion:layout_constraintBottom_toBottomOf="parent"
-                    motion:layout_constraintStart_toStartOf="parent"
-                    motion:layout_constraintTop_toTopOf="parent">
-    
-                <CustomAttribute
-                        motion:attributeName="backgroundColor"
-                        motion:customColorValue="@color/colorPrimary" />
-    
-            </Constraint>
-        </ConstraintSet>
-    
-        <ConstraintSet android:id="@+id/end">
-            <Constraint
-                    android:id="@+id/button"
-                    android:layout_width="64dp"
-                    android:layout_height="64dp"
-                    android:layout_marginEnd="8dp"
-                    motion:layout_constraintBottom_toBottomOf="parent"
-                    motion:layout_constraintEnd_toEndOf="parent"
-                    motion:layout_constraintTop_toTopOf="parent">
-    
-                <CustomAttribute
-                        motion:attributeName="backgroundColor"
-                        motion:customColorValue="@color/colorAccent" />
-    
-            </Constraint>
-        </ConstraintSet>
-    </MotionScene>
+<Transition
+        motion:constraintSetEnd="@id/end"
+        motion:constraintSetStart="@id/start"
+        motion:motionInterpolator="linear">
 
+        <OnSwipe
+                motion:dragDirection="dragLeft"
+                motion:touchAnchorId="@+id/button"
+                motion:touchAnchorSide="right" />
+
+        <KeyFrameSet>
+
+        <KeyAttribute
+                android:rotation="-45"
+                android:scaleX="2"
+                android:scaleY="2"
+                motion:framePosition="50"
+                motion:motionTarget="@+id/button" />
+        
+        <KeyPosition
+                motion:framePosition="50"
+                motion:keyPositionType="parentRelative"
+                motion:motionTarget="@+id/button"
+                motion:percentY="0.25" />
+        </KeyFrameSet>
+</Transition>
+
+<ConstraintSet android:id="@+id/start">
+        <Constraint
+                android:id="@+id/button"
+                android:layout_width="64dp"
+                android:layout_height="64dp"
+                android:layout_marginStart="8dp"
+                motion:layout_constraintBottom_toBottomOf="parent"
+                motion:layout_constraintStart_toStartOf="parent"
+                motion:layout_constraintTop_toTopOf="parent">
+
+        <CustomAttribute
+                motion:attributeName="backgroundColor"
+                motion:customColorValue="@color/colorPrimary" />
+
+        </Constraint>
+</ConstraintSet>
+
+<ConstraintSet android:id="@+id/end">
+        <Constraint
+                android:id="@+id/button"
+                android:layout_width="64dp"
+                android:layout_height="64dp"
+                android:layout_marginEnd="8dp"
+                motion:layout_constraintBottom_toBottomOf="parent"
+                motion:layout_constraintEnd_toEndOf="parent"
+                motion:layout_constraintTop_toTopOf="parent">
+
+        <CustomAttribute
+                motion:attributeName="backgroundColor"
+                motion:customColorValue="@color/colorAccent" />
+
+        </Constraint>
+</ConstraintSet>
+</MotionScene>
+```
 scene_04.xml
 
-<Transition> 안의<KeyFrameSet> 이라는 태그를 주목해서 보겠습니다.
-<KeyFrameSet> 에 <KeyAttribute> 와 <KeyPosition> 을 세팅해주었습니다. 
-**<KeyPosition>** 은 레이아웃 위치를 설정할 때 사용할 수 있습니다. motion:motionTarget 속성으로 애니메이팅할 타겟뷰를 설정해주고, motion:keyPositionType 으로 parentRelative 을 설정했습니다. 이는 타겟뷰의 위치를 부모뷰와의 상대적 위치로 계산합니다. motion:percentY 를 0.25로 설정해줌으로, 부모뷰의 상단부터 하단까지의 25% 인 지점에 위치하도록 합니다. motion:framePosition 으로 전체 애니메이션의 시작과 끝 사이 어느위치에서의 상태인지를 설정합니다. 50으로 해 주었으니 전체 애니메이션의 딱 중간 부분을 나타냅니다.
-**<KeyAttribute>** 는 레이아웃 위치 이후 뷰의 속성들을 설정할 때 사용할 수 있습니다. 예제에서는 scale 을 2로 해서 뷰의 크기를 2배로 높였고, rotation 은 반시계방향으로 45도 회전하도록 해주었습니다.
+`<Transition>` 안의<`KeyFrameSet>` 이라는 태그를 주목해서 보겠습니다.
+`<KeyFrameSet>` 에 `<KeyAttribute>`와 `<KeyPosition>`을 세팅해주었습니다. 
+**`<KeyPosition>`** 은 레이아웃 위치를 설정할 때 사용할 수 있습니다. motion:motionTarget 속성으로 애니메이팅할 타겟뷰를 설정해주고, motion:keyPositionType 으로 parentRelative 을 설정했습니다. 이는 타겟뷰의 위치를 부모뷰와의 상대적 위치로 계산합니다. motion:percentY 를 0.25로 설정해줌으로, 부모뷰의 상단부터 하단까지의 25% 인 지점에 위치하도록 합니다. motion:framePosition 으로 전체 애니메이션의 시작과 끝 사이 어느위치에서의 상태인지를 설정합니다. 50으로 해 주었으니 전체 애니메이션의 딱 중간 부분을 나타냅니다.
+**`<KeyAttribute>`** 는 레이아웃 위치 이후 뷰의 속성들을 설정할 때 사용할 수 있습니다. 예제에서는 scale 을 2로 해서 뷰의 크기를 2배로 높였고, rotation 은 반시계방향으로 45도 회전하도록 해주었습니다.
 
 *지금까지 기본예제, ConstraintSet 사용 예제, KeyFrameSet 사용 예제를 다루어보았습니다. 다음은 MotionLayout, MotionScene 과 관련된 여러가지 속성들을 더 자세히 다루어보겠습니다.*
 
 ---
 
-### <MotionLayout> 속성
+### `<MotionLayout>` 속성
 
 - `app:layoutDescription=”reference”` MotionScene xml 파일을 설정합니다.
 - `app:applyMotionScene=”boolean”` MotionScene 을 적용할지 여부 (기본값은 true)
@@ -437,24 +441,24 @@ scene_04.xml
 - `app:currentState=”reference”`특정 ConstraintSet 으로 강제설정합니다.
 - 기타 ConstraintLayout 의 속성들
 
-### <Transition> 속성
+### `<Transition>` 속성
 
 - `motion:constraintSetStart`시작 ConstraintSet 또는 Constraint 값들을 가져올 layout xml 파일을 설정합니다.
 - `motion:constraintSetEnd`끝 ConstraintSet 또는 Constraint 값들을 가져올 layout xml 파일을 설정합니다.
 - `motion:motionInterpolator`전체 애니메이션의 보간처리 할 방법을 설정합니다. ex) linear, easeIn, easeOut 등등
-- `motion:duration`애니메이션 진행시간을 설정합니다. Transition 의 <OnSwipe> 핸들러에 대해서는 동작하지 않고 <OnClick> 을 설정 해주었을 때만 동작합니다.
+- `motion:duration`애니메이션 진행시간을 설정합니다. Transition 의 `<OnSwipe>` 핸들러에 대해서는 동작하지 않고 `<OnClick>` 을 설정 해주었을 때만 동작합니다.
 - `motion:autoTransition`한 state 에서 다른 state 로 자동으로 이동하도록 설정합니다.
 - jumpToStart: 끝 sate 에 도달시 시작 state 로 한번에 이동합니다. 
 - jumpToEnd: 시작 state 일시 끝 state 로 한번에 이동합니다.
 - animateToStart: 끝 state 에 도달시 시작 state 로 애니메이션을 실행합니다.
 - animateToEnd: 시작 state 일시 끝 state 로 애니메이션을 실행합니다.
 
-### **<OnClick> 속성**
+### `<OnClick>` 속성
 
 - `motion:motionTarget`타겟 뷰의 id 를 설정합니다.
 - `motion:clickAction`클릭시 애니메이션의 실행방향을 설정합니다.{toggle|transitionToEnd|transitionToStart|jumpToEnd|jumpToStart”}
 
-### <OnSwipe> 속성
+### `<OnSwipe>` 속성
 
 - `motion:touchAnchorId`애니메이팅 할 타겟 뷰의 id 를 설정합니다.
 - `motion:touchRegionId`터치 범위를 제한합니다. 기본적으로 MotionLayout 전체를 터치할 수 있지만, 특정 뷰를 설정해주어, 해당 뷰 안에서만 터치할 수 있도록 할 때 유용합니다.
@@ -465,16 +469,16 @@ scene_04.xml
 - `motion:dragScale`스와이프 거리 factor 를 설정합니다. 0.5로 설정시 스와이프 거리를 2배로 해야 합니다. (실험해보았으나 왜 인지 현재는 작동은 하지 않는 속성이었습니다.)
 - `motion:moveWhenScrollAtTop`타겟뷰가 Scroll 가능한 뷰 (ScrollView, RecyclerView 등)일 경우 스와이프를 하면 스크롤을 먼저 실행하고 스크롤이 최상단에 왔을 경우에 움직이도록 한다고 이해 했습니다만, 정상동작 확인은 못했습니다.
 
-### <Constraint> 속성
+### `<Constraint>` 속성
 
 - `motion:transitionEasing`이 state 에서 애니메이션 시작시의 easing curve 설정
 {curve(1.0,0,0,1.0) | standard | accelerate | decelerate | linear }
 - `motion:pathMotionArc`이 state 와 다른 state 의 좌표상 x, y 위치가 모두 다를 경우 호를 그리며 움직이도록 설정 
 {startVertical | startHorizontal | none }
 - `motion:transitionPathRotate`타겟 뷰가 path 를 따라감에 따라 회전되도록 설정
-- 기타 View 의 기본 속성과 ConstraintLayout 기본 속성과 <CustomAttribute> 의 속성들
+- 기타 View 의 기본 속성과 ConstraintLayout 기본 속성과 `<CustomAttribute>` 의 속성들
 
-### <KeyPosition> 속성
+### `<KeyPosition>` 속성
 
 KeyFrameSet 의 KeyPosition 은 레이아웃 위치에 대한 설정
 
@@ -494,7 +498,7 @@ KeyFrameSet 의 KeyPosition 은 레이아웃 위치에 대한 설정
 - `motion:percentHeight`시작과 끝의 height 차이를 기준으로 한 백분율 height(시작과 끝의 height 차이가 없는 경우 작동 안함)
 - `motion:sizePercent`시작 size 를 기준으로 백분율 사이즈 (타겟 뷰가 고정사이즈인경우, CustomAttribute 의 scale 을 사용할 것).  ex) 시작시 size 가 100x100, sizePercent=2 이면 이 KeyFrame 에서의 size 는 200x200
 
-### <KeyCycle> 의 속성
+### `<KeyCycle>` 의 속성
 
 KeyFrameSet 의 KeyCycle 은 이전 state 에서 해당 framePosition 까지 특정 속성들을 진동시킨다.
 
@@ -503,10 +507,10 @@ KeyFrameSet 의 KeyCycle 은 이전 state 에서 해당 framePosition 까지 특
 - `motion:waveShape`진동 웨이브의 모양{sin|square|triangle|sawtooth|reverseSawtooth|cos|bounce}
 - `motion:wavePeriod`이 FrameSet 까지의 진동 횟수
 - `motion:waveOffset`해당 속성의 offset 값
-- <CustomAttribute> 로 설정한 타겟 뷰의 커스텀 속성들(reflection 을 이용한 setter 함수의 이름을 이용합니다.)
+- `<CustomAttribute>` 로 설정한 타겟 뷰의 커스텀 속성들(reflection 을 이용한 setter 함수의 이름을 이용합니다.)
 - 뷰의 기본 속성들
 
-### <KeyAttribute> 속성
+### `<KeyAttribute>` 속성
 
 애니메이션중 해당 위치에서 레이아웃 이후 타겟 뷰의 속성들을 설정합니다.
 
@@ -516,7 +520,7 @@ KeyFrameSet 의 KeyCycle 은 이전 state 에서 해당 framePosition 까지 특
 {curve(1.0,0,0,1.0) | standard | accelerate | decelerate | linear }
 - `motion:transitionPathRotate`타겟 뷰가 path 를 따라감에 따라 회전되도록 설정
 - 뷰의 기본 속성들
-- <CustomAttribute> 로 설정한 타겟 뷰의 커스텀 속성들(reflection 을 이용한 setter 함수의 이름을 이용합니다.)
+- `<CustomAttribute>` 로 설정한 타겟 뷰의 커스텀 속성들(reflection 을 이용한 setter 함수의 이름을 이용합니다.)
 
 *지금까지 각 태그들이 어떤 속성을 갖고 있는지 알아보았습니다.마지막으로 MotionLayout 을 사용해서 안드로이드 OS 퀵메뉴를 만들어보겠습니다.*
 
@@ -529,504 +533,504 @@ KeyFrameSet 의 KeyCycle 은 이전 state 에서 해당 framePosition 까지 특
 ![image5](/assets/images/thomas/motionlayout/image_5.gif)
 
 MotionLayout 을 이용해서 간단한 안드로이드 퀵세팅을 구현해보았습니다.
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.motion.widget.MotionLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        app:layoutDescription="@xml/scene_quick_setting"
+        tools:motionProgress="0">
 
-    <?xml version="1.0" encoding="utf-8"?>
-    <androidx.constraintlayout.motion.widget.MotionLayout xmlns:android="http://schemas.android.com/apk/res/android"
-            xmlns:app="http://schemas.android.com/apk/res-auto"
-            xmlns:tools="http://schemas.android.com/tools"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@color/white"
-            app:layoutDescription="@xml/scene_quick_setting"
-            tools:motionProgress="0">
-    
-        <ImageView
-                android:id="@+id/backgroundImage"
-                android:layout_width="0dp"
-                android:layout_height="0dp"
-                android:adjustViewBounds="true"
-                android:scaleType="centerCrop"
-                android:src="@drawable/free_cat"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-    
-        <View
-                android:id="@+id/iconBackground"
-                android:layout_width="0dp"
-                android:layout_height="0dp"
-                android:background="@color/quick_setting_background"
-                app:layout_constraintBottom_toBottomOf="@+id/view9"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-    
-        <!--  Row 1  -->
-        <ImageView
-                android:id="@+id/view1"
-                android:layout_width="@dimen/quick_setting_icon_width"
-                android:layout_height="wrap_content"
-                android:adjustViewBounds="true"
-                android:paddingBottom="30dp"
-                android:scaleType="fitCenter"
-                android:src="@drawable/ic_cake_black_24dp" />
-    
-        <ImageView
-                android:id="@+id/view2"
-                android:layout_width="@dimen/quick_setting_icon_width"
-                android:layout_height="wrap_content"
-                android:adjustViewBounds="true"
-                android:paddingBottom="30dp"
-                android:scaleType="fitCenter"
-                android:src="@drawable/ic_fingerprint_black_24dp" />
-    
-        <ImageView
-                android:id="@+id/view3"
-                android:layout_width="@dimen/quick_setting_icon_width"
-                android:layout_height="wrap_content"
-                android:adjustViewBounds="true"
-                android:paddingBottom="30dp"
-                android:scaleType="fitCenter"
-                android:src="@drawable/ic_volume_up_black_24dp" />
-    
-        <ImageView
-                android:id="@+id/view4"
-                android:layout_width="@dimen/quick_setting_icon_width"
-                android:layout_height="wrap_content"
-                android:adjustViewBounds="true"
-                android:paddingBottom="30dp"
-                android:scaleType="fitCenter"
-                android:src="@drawable/ic_access_alarms_black_24dp" />
-    
-        <!--  Row 2  -->
-        <ImageView
-                android:id="@+id/view5"
-                android:layout_width="@dimen/quick_setting_icon_width"
-                android:layout_height="wrap_content"
-                android:adjustViewBounds="true"
-                android:paddingBottom="30dp"
-                android:scaleType="fitCenter"
-                android:src="@drawable/ic_airplanemode_active_black_24dp" />
-    
-        <ImageView
-                android:id="@+id/view6"
-                android:layout_width="@dimen/quick_setting_icon_width"
-                android:layout_height="wrap_content"
-                android:adjustViewBounds="true"
-                android:paddingBottom="30dp"
-                android:scaleType="fitCenter"
-                android:src="@drawable/ic_bluetooth_black_24dp" />
-    
-        <ImageView
-                android:id="@+id/view7"
-                android:layout_width="@dimen/quick_setting_icon_width"
-                android:layout_height="wrap_content"
-                android:adjustViewBounds="true"
-                android:paddingBottom="30dp"
-                android:scaleType="fitCenter"
-                android:src="@drawable/ic_bug_report_black_24dp" />
-    
-        <ImageView
-                android:id="@+id/view8"
-                android:layout_width="@dimen/quick_setting_icon_width"
-                android:layout_height="wrap_content"
-                android:adjustViewBounds="true"
-                android:paddingBottom="30dp"
-                android:scaleType="fitCenter"
-                android:src="@drawable/ic_cloud_queue_black_24dp" />
-    
-        <!--  Row 3  -->
-    
-        <ImageView
-                android:id="@+id/view9"
-                android:layout_width="@dimen/quick_setting_icon_width"
-                android:layout_height="wrap_content"
-                android:adjustViewBounds="true"
-                android:paddingBottom="30dp"
-                android:scaleType="fitCenter"
-                android:src="@drawable/ic_favorite_border_black_24dp" />
-    
-        <ImageView
-                android:id="@+id/view10"
-                android:layout_width="@dimen/quick_setting_icon_width"
-                android:layout_height="wrap_content"
-                android:adjustViewBounds="true"
-                android:paddingBottom="30dp"
-                android:scaleType="fitCenter"
-                android:src="@drawable/ic_location_on_black_24dp" />
-    
-        <ImageView
-                android:id="@+id/view11"
-                android:layout_width="@dimen/quick_setting_icon_width"
-                android:layout_height="wrap_content"
-                android:adjustViewBounds="true"
-                android:paddingBottom="30dp"
-                android:scaleType="fitCenter"
-                android:src="@drawable/ic_screen_rotation_black_24dp" />
-    
-        <ImageView
-                android:id="@+id/view12"
-                android:layout_width="@dimen/quick_setting_icon_width"
-                android:layout_height="wrap_content"
-                android:adjustViewBounds="true"
-                android:paddingBottom="30dp"
-                android:scaleType="fitCenter"
-                android:src="@drawable/ic_thumb_up_black_24dp" />
-    
-    </androidx.constraintlayout.motion.widget.MotionLayout>
+<ImageView
+        android:id="@+id/backgroundImage"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:adjustViewBounds="true"
+        android:scaleType="centerCrop"
+        android:src="@drawable/free_cat"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
+<View
+        android:id="@+id/iconBackground"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@color/quick_setting_background"
+        app:layout_constraintBottom_toBottomOf="@+id/view9"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+<!--  Row 1  -->
+<ImageView
+        android:id="@+id/view1"
+        android:layout_width="@dimen/quick_setting_icon_width"
+        android:layout_height="wrap_content"
+        android:adjustViewBounds="true"
+        android:paddingBottom="30dp"
+        android:scaleType="fitCenter"
+        android:src="@drawable/ic_cake_black_24dp" />
+
+<ImageView
+        android:id="@+id/view2"
+        android:layout_width="@dimen/quick_setting_icon_width"
+        android:layout_height="wrap_content"
+        android:adjustViewBounds="true"
+        android:paddingBottom="30dp"
+        android:scaleType="fitCenter"
+        android:src="@drawable/ic_fingerprint_black_24dp" />
+
+<ImageView
+        android:id="@+id/view3"
+        android:layout_width="@dimen/quick_setting_icon_width"
+        android:layout_height="wrap_content"
+        android:adjustViewBounds="true"
+        android:paddingBottom="30dp"
+        android:scaleType="fitCenter"
+        android:src="@drawable/ic_volume_up_black_24dp" />
+
+<ImageView
+        android:id="@+id/view4"
+        android:layout_width="@dimen/quick_setting_icon_width"
+        android:layout_height="wrap_content"
+        android:adjustViewBounds="true"
+        android:paddingBottom="30dp"
+        android:scaleType="fitCenter"
+        android:src="@drawable/ic_access_alarms_black_24dp" />
+
+<!--  Row 2  -->
+<ImageView
+        android:id="@+id/view5"
+        android:layout_width="@dimen/quick_setting_icon_width"
+        android:layout_height="wrap_content"
+        android:adjustViewBounds="true"
+        android:paddingBottom="30dp"
+        android:scaleType="fitCenter"
+        android:src="@drawable/ic_airplanemode_active_black_24dp" />
+
+<ImageView
+        android:id="@+id/view6"
+        android:layout_width="@dimen/quick_setting_icon_width"
+        android:layout_height="wrap_content"
+        android:adjustViewBounds="true"
+        android:paddingBottom="30dp"
+        android:scaleType="fitCenter"
+        android:src="@drawable/ic_bluetooth_black_24dp" />
+
+<ImageView
+        android:id="@+id/view7"
+        android:layout_width="@dimen/quick_setting_icon_width"
+        android:layout_height="wrap_content"
+        android:adjustViewBounds="true"
+        android:paddingBottom="30dp"
+        android:scaleType="fitCenter"
+        android:src="@drawable/ic_bug_report_black_24dp" />
+
+<ImageView
+        android:id="@+id/view8"
+        android:layout_width="@dimen/quick_setting_icon_width"
+        android:layout_height="wrap_content"
+        android:adjustViewBounds="true"
+        android:paddingBottom="30dp"
+        android:scaleType="fitCenter"
+        android:src="@drawable/ic_cloud_queue_black_24dp" />
+
+<!--  Row 3  -->
+
+<ImageView
+        android:id="@+id/view9"
+        android:layout_width="@dimen/quick_setting_icon_width"
+        android:layout_height="wrap_content"
+        android:adjustViewBounds="true"
+        android:paddingBottom="30dp"
+        android:scaleType="fitCenter"
+        android:src="@drawable/ic_favorite_border_black_24dp" />
+
+<ImageView
+        android:id="@+id/view10"
+        android:layout_width="@dimen/quick_setting_icon_width"
+        android:layout_height="wrap_content"
+        android:adjustViewBounds="true"
+        android:paddingBottom="30dp"
+        android:scaleType="fitCenter"
+        android:src="@drawable/ic_location_on_black_24dp" />
+
+<ImageView
+        android:id="@+id/view11"
+        android:layout_width="@dimen/quick_setting_icon_width"
+        android:layout_height="wrap_content"
+        android:adjustViewBounds="true"
+        android:paddingBottom="30dp"
+        android:scaleType="fitCenter"
+        android:src="@drawable/ic_screen_rotation_black_24dp" />
+
+<ImageView
+        android:id="@+id/view12"
+        android:layout_width="@dimen/quick_setting_icon_width"
+        android:layout_height="wrap_content"
+        android:adjustViewBounds="true"
+        android:paddingBottom="30dp"
+        android:scaleType="fitCenter"
+        android:src="@drawable/ic_thumb_up_black_24dp" />
+
+</androidx.constraintlayout.motion.widget.MotionLayout>
+```
 quick_setting_activity.xml
 
 움직일 아이콘 12개를 준비해주고, layoutDescription 으로 scene_quick_setting.xml 을 참조하도록 했습니다.
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<MotionScene xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:motion="http://schemas.android.com/apk/res-auto">
 
-    <?xml version="1.0" encoding="utf-8"?>
-    <MotionScene xmlns:android="http://schemas.android.com/apk/res/android"
-            xmlns:motion="http://schemas.android.com/apk/res-auto">
-    
-        <Transition
-                motion:constraintSetEnd="@id/end"
-                motion:constraintSetStart="@id/start"
-                motion:motionInterpolator="linear">
-    
-            <OnSwipe
-                    motion:dragDirection="dragDown"
-                    motion:touchAnchorSide="bottom" />
-    
-            <KeyFrameSet>
-                <!-- Row 1 -->
-    
-                <!-- Row 2 -->
-                <KeyPosition
-                        motion:framePosition="50"
-                        motion:keyPositionType="deltaRelative"
-                        motion:motionTarget="@+id/view5"
-                        motion:percentX="0"
-                        motion:percentY="1" />
-    
-                <KeyPosition
-                        motion:framePosition="50"
-                        motion:keyPositionType="deltaRelative"
-                        motion:motionTarget="@+id/view6"
-                        motion:percentX="0"
-                        motion:percentY="1" />
-    
-                <KeyPosition
-                        motion:framePosition="50"
-                        motion:keyPositionType="deltaRelative"
-                        motion:motionTarget="@+id/view7"
-                        motion:percentX="0"
-                        motion:percentY="1" />
-    
-                <KeyPosition
-                        motion:framePosition="50"
-                        motion:keyPositionType="deltaRelative"
-                        motion:motionTarget="@+id/view8"
-                        motion:percentX="0"
-                        motion:percentY="1" />
-    
-                <!-- Row 3 -->
-    
-                <KeyPosition
-                        motion:framePosition="50"
-                        motion:keyPositionType="deltaRelative"
-                        motion:motionTarget="@+id/view9"
-                        motion:percentX="1"
-                        motion:sizePercent="1" />
-    
-                <KeyPosition
-                        motion:framePosition="50"
-                        motion:keyPositionType="deltaRelative"
-                        motion:motionTarget="@+id/view10"
-                        motion:percentX="1"
-                        motion:sizePercent="1" />
-    
-                <KeyPosition
-                        motion:framePosition="50"
-                        motion:keyPositionType="deltaRelative"
-                        motion:motionTarget="@+id/view11"
-                        motion:percentX="1"
-                        motion:sizePercent="1" />
-    
-                <KeyPosition
-                        motion:framePosition="50"
-                        motion:keyPositionType="deltaRelative"
-                        motion:motionTarget="@+id/view12"
-                        motion:percentX="1"
-                        motion:sizePercent="1" />
-    
-                <KeyAttribute
-                        android:alpha="0"
-                        motion:framePosition="70"
-                        motion:motionTarget="@+id/view9" />
-    
-                <KeyAttribute
-                        android:alpha="0"
-                        motion:framePosition="70"
-                        motion:motionTarget="@+id/view10" />
-    
-                <KeyAttribute
-                        android:alpha="0"
-                        motion:framePosition="70"
-                        motion:motionTarget="@+id/view11" />
-    
-                <KeyAttribute
-                        android:alpha="0"
-                        motion:framePosition="70"
-                        motion:motionTarget="@+id/view12" />
-            </KeyFrameSet>
-        </Transition>
-    
-        <ConstraintSet android:id="@+id/start">
-            <!-- Row 1 -->
-            <Constraint
-                    android:id="@+id/view1"
-                    android:layout_width="@dimen/quick_setting_icon_width_start"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="20dp"
-                    android:visibility="visible"
-                    motion:layout_constraintEnd_toStartOf="@+id/view2"
-                    motion:layout_constraintHorizontal_chainStyle="spread"
-                    motion:layout_constraintStart_toStartOf="parent"
-                    motion:layout_constraintTop_toTopOf="parent" />
-    
-            <Constraint
-                    android:id="@+id/view2"
-                    android:layout_width="@dimen/quick_setting_icon_width_start"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="20dp"
-                    android:visibility="visible"
-                    motion:layout_constraintEnd_toStartOf="@+id/view3"
-                    motion:layout_constraintStart_toEndOf="@+id/view1"
-                    motion:layout_constraintTop_toTopOf="parent" />
-    
-            <Constraint
-                    android:id="@+id/view3"
-                    android:layout_width="@dimen/quick_setting_icon_width_start"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="20dp"
-                    android:visibility="visible"
-                    motion:layout_constraintEnd_toStartOf="@+id/view4"
-                    motion:layout_constraintStart_toEndOf="@+id/view2"
-                    motion:layout_constraintTop_toTopOf="parent" />
-    
-            <Constraint
-                    android:id="@+id/view4"
-                    android:layout_width="@dimen/quick_setting_icon_width_start"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="20dp"
-                    android:visibility="visible"
-                    motion:layout_constraintEnd_toStartOf="@+id/view5"
-                    motion:layout_constraintStart_toEndOf="@+id/view3"
-                    motion:layout_constraintTop_toTopOf="parent" />
-    
-            <!-- Row 2 -->
-    
-            <Constraint
-                    android:id="@+id/view5"
-                    android:layout_width="@dimen/quick_setting_icon_width_start"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="20dp"
-                    android:visibility="visible"
-                    motion:layout_constraintEnd_toStartOf="@+id/view6"
-                    motion:layout_constraintStart_toEndOf="@+id/view4"
-                    motion:layout_constraintTop_toTopOf="parent" />
-    
-            <Constraint
-                    android:id="@+id/view6"
-                    android:layout_width="@dimen/quick_setting_icon_width_start"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="20dp"
-                    android:visibility="visible"
-                    motion:layout_constraintEnd_toStartOf="@+id/view7"
-                    motion:layout_constraintStart_toEndOf="@+id/view5"
-                    motion:layout_constraintTop_toTopOf="parent" />
-    
-            <Constraint
-                    android:id="@+id/view7"
-                    android:layout_width="@dimen/quick_setting_icon_width_start"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="20dp"
-                    android:visibility="visible"
-                    motion:layout_constraintEnd_toStartOf="@+id/view8"
-                    motion:layout_constraintStart_toEndOf="@+id/view6"
-                    motion:layout_constraintTop_toTopOf="parent" />
-    
-            <Constraint
-                    android:id="@+id/view8"
-                    android:layout_width="@dimen/quick_setting_icon_width_start"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="20dp"
-                    android:visibility="visible"
-                    motion:layout_constraintEnd_toEndOf="parent"
-                    motion:layout_constraintStart_toEndOf="@+id/view7"
-                    motion:layout_constraintTop_toTopOf="parent" />
-    
-            <!-- Row 3 -->
-    
-            <Constraint
-                    android:id="@+id/view9"
-                    android:layout_width="@dimen/quick_setting_icon_width"
-                    android:layout_height="wrap_content"
-                    android:visibility="gone"
-                    motion:layout_constraintEnd_toStartOf="@+id/view10"
-                    motion:layout_constraintHorizontal_chainStyle="spread"
-                    motion:layout_constraintStart_toStartOf="parent"
-                    motion:layout_constraintTop_toBottomOf="@+id/view5" />
-    
-            <Constraint
-                    android:id="@+id/view10"
-                    android:layout_width="@dimen/quick_setting_icon_width"
-                    android:layout_height="wrap_content"
-                    android:visibility="gone"
-                    motion:layout_constraintEnd_toStartOf="@+id/view11"
-                    motion:layout_constraintStart_toEndOf="@+id/view9"
-                    motion:layout_constraintTop_toBottomOf="@+id/view5" />
-    
-            <Constraint
-                    android:id="@+id/view11"
-                    android:layout_width="@dimen/quick_setting_icon_width"
-                    android:layout_height="wrap_content"
-                    android:visibility="gone"
-                    motion:layout_constraintEnd_toStartOf="@+id/view12"
-                    motion:layout_constraintStart_toEndOf="@+id/view10"
-                    motion:layout_constraintTop_toBottomOf="@+id/view5" />
-    
-            <Constraint
-                    android:id="@+id/view12"
-                    android:layout_width="@dimen/quick_setting_icon_width"
-                    android:layout_height="wrap_content"
-                    android:visibility="gone"
-                    motion:layout_constraintEnd_toEndOf="parent"
-                    motion:layout_constraintStart_toEndOf="@+id/view11"
-                    motion:layout_constraintTop_toBottomOf="@+id/view5" />
-    
-    
-        </ConstraintSet>
-    
-        <ConstraintSet android:id="@+id/end">
-            <!-- Row 1 -->
-            <Constraint
-                    android:id="@+id/view1"
-                    android:layout_width="@dimen/quick_setting_icon_width"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="20dp"
-                    android:visibility="visible"
-                    motion:layout_constraintEnd_toStartOf="@+id/view2"
-                    motion:layout_constraintHorizontal_chainStyle="spread"
-                    motion:layout_constraintStart_toStartOf="parent"
-                    motion:layout_constraintTop_toTopOf="parent" />
-    
-            <Constraint
-                    android:id="@+id/view2"
-                    android:layout_width="@dimen/quick_setting_icon_width"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="20dp"
-                    android:visibility="visible"
-                    motion:layout_constraintEnd_toStartOf="@+id/view3"
-                    motion:layout_constraintStart_toEndOf="@+id/view1"
-                    motion:layout_constraintTop_toTopOf="parent" />
-    
-            <Constraint
-                    android:id="@+id/view3"
-                    android:layout_width="@dimen/quick_setting_icon_width"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="20dp"
-                    android:visibility="visible"
-                    motion:layout_constraintEnd_toStartOf="@+id/view4"
-                    motion:layout_constraintStart_toEndOf="@+id/view2"
-                    motion:layout_constraintTop_toTopOf="parent" />
-    
-            <Constraint
-                    android:id="@+id/view4"
-                    android:layout_width="@dimen/quick_setting_icon_width"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="20dp"
-                    android:visibility="visible"
-                    motion:layout_constraintEnd_toEndOf="parent"
-                    motion:layout_constraintStart_toEndOf="@+id/view3"
-                    motion:layout_constraintTop_toTopOf="parent" />
-    
-            <!-- Row 2 -->
-    
-            <Constraint
-                    android:id="@+id/view5"
-                    android:layout_width="@dimen/quick_setting_icon_width"
-                    android:layout_height="wrap_content"
-                    android:visibility="visible"
-                    motion:layout_constraintEnd_toStartOf="@+id/view6"
-                    motion:layout_constraintStart_toStartOf="parent"
-                    motion:layout_constraintTop_toBottomOf="@+id/view1" />
-    
-            <Constraint
-                    android:id="@+id/view6"
-                    android:layout_width="@dimen/quick_setting_icon_width"
-                    android:layout_height="wrap_content"
-                    android:visibility="visible"
-                    motion:layout_constraintEnd_toStartOf="@+id/view7"
-                    motion:layout_constraintStart_toEndOf="@+id/view5"
-                    motion:layout_constraintTop_toBottomOf="@+id/view1" />
-    
-            <Constraint
-                    android:id="@+id/view7"
-                    android:layout_width="@dimen/quick_setting_icon_width"
-                    android:layout_height="wrap_content"
-                    android:visibility="visible"
-                    motion:layout_constraintEnd_toStartOf="@+id/view8"
-                    motion:layout_constraintStart_toEndOf="@+id/view6"
-                    motion:layout_constraintTop_toBottomOf="@+id/view1" />
-    
-            <Constraint
-                    android:id="@+id/view8"
-                    android:layout_width="@dimen/quick_setting_icon_width"
-                    android:layout_height="wrap_content"
-                    android:visibility="visible"
-                    motion:layout_constraintEnd_toEndOf="parent"
-                    motion:layout_constraintStart_toEndOf="@+id/view7"
-                    motion:layout_constraintTop_toBottomOf="@+id/view1" />
-    
-            <!-- Row 3 -->
-    
-            <Constraint
-                    android:id="@+id/view9"
-                    android:layout_width="@dimen/quick_setting_icon_width"
-                    android:layout_height="wrap_content"
-                    android:visibility="visible"
-                    motion:layout_constraintEnd_toStartOf="@+id/view10"
-                    motion:layout_constraintHorizontal_chainStyle="spread"
-                    motion:layout_constraintStart_toStartOf="parent"
-                    motion:layout_constraintTop_toBottomOf="@+id/view5" />
-    
-            <Constraint
-                    android:id="@+id/view10"
-                    android:layout_width="@dimen/quick_setting_icon_width"
-                    android:layout_height="wrap_content"
-                    android:visibility="visible"
-                    motion:layout_constraintEnd_toStartOf="@+id/view11"
-                    motion:layout_constraintStart_toEndOf="@+id/view9"
-                    motion:layout_constraintTop_toBottomOf="@+id/view5" />
-    
-            <Constraint
-                    android:id="@+id/view11"
-                    android:layout_width="@dimen/quick_setting_icon_width"
-                    android:layout_height="wrap_content"
-                    android:visibility="visible"
-                    motion:layout_constraintEnd_toStartOf="@+id/view12"
-                    motion:layout_constraintStart_toEndOf="@+id/view10"
-                    motion:layout_constraintTop_toBottomOf="@+id/view5" />
-    
-            <Constraint
-                    android:id="@+id/view12"
-                    android:layout_width="@dimen/quick_setting_icon_width"
-                    android:layout_height="wrap_content"
-                    android:visibility="visible"
-                    motion:layout_constraintEnd_toEndOf="parent"
-                    motion:layout_constraintStart_toEndOf="@+id/view11"
-                    motion:layout_constraintTop_toBottomOf="@+id/view5" />
-    
-        </ConstraintSet>
-    </MotionScene>
+<Transition
+        motion:constraintSetEnd="@id/end"
+        motion:constraintSetStart="@id/start"
+        motion:motionInterpolator="linear">
 
+        <OnSwipe
+                motion:dragDirection="dragDown"
+                motion:touchAnchorSide="bottom" />
+
+        <KeyFrameSet>
+        <!-- Row 1 -->
+
+        <!-- Row 2 -->
+        <KeyPosition
+                motion:framePosition="50"
+                motion:keyPositionType="deltaRelative"
+                motion:motionTarget="@+id/view5"
+                motion:percentX="0"
+                motion:percentY="1" />
+
+        <KeyPosition
+                motion:framePosition="50"
+                motion:keyPositionType="deltaRelative"
+                motion:motionTarget="@+id/view6"
+                motion:percentX="0"
+                motion:percentY="1" />
+
+        <KeyPosition
+                motion:framePosition="50"
+                motion:keyPositionType="deltaRelative"
+                motion:motionTarget="@+id/view7"
+                motion:percentX="0"
+                motion:percentY="1" />
+
+        <KeyPosition
+                motion:framePosition="50"
+                motion:keyPositionType="deltaRelative"
+                motion:motionTarget="@+id/view8"
+                motion:percentX="0"
+                motion:percentY="1" />
+
+        <!-- Row 3 -->
+
+        <KeyPosition
+                motion:framePosition="50"
+                motion:keyPositionType="deltaRelative"
+                motion:motionTarget="@+id/view9"
+                motion:percentX="1"
+                motion:sizePercent="1" />
+
+        <KeyPosition
+                motion:framePosition="50"
+                motion:keyPositionType="deltaRelative"
+                motion:motionTarget="@+id/view10"
+                motion:percentX="1"
+                motion:sizePercent="1" />
+
+        <KeyPosition
+                motion:framePosition="50"
+                motion:keyPositionType="deltaRelative"
+                motion:motionTarget="@+id/view11"
+                motion:percentX="1"
+                motion:sizePercent="1" />
+
+        <KeyPosition
+                motion:framePosition="50"
+                motion:keyPositionType="deltaRelative"
+                motion:motionTarget="@+id/view12"
+                motion:percentX="1"
+                motion:sizePercent="1" />
+
+        <KeyAttribute
+                android:alpha="0"
+                motion:framePosition="70"
+                motion:motionTarget="@+id/view9" />
+
+        <KeyAttribute
+                android:alpha="0"
+                motion:framePosition="70"
+                motion:motionTarget="@+id/view10" />
+
+        <KeyAttribute
+                android:alpha="0"
+                motion:framePosition="70"
+                motion:motionTarget="@+id/view11" />
+
+        <KeyAttribute
+                android:alpha="0"
+                motion:framePosition="70"
+                motion:motionTarget="@+id/view12" />
+        </KeyFrameSet>
+</Transition>
+
+<ConstraintSet android:id="@+id/start">
+        <!-- Row 1 -->
+        <Constraint
+                android:id="@+id/view1"
+                android:layout_width="@dimen/quick_setting_icon_width_start"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:visibility="visible"
+                motion:layout_constraintEnd_toStartOf="@+id/view2"
+                motion:layout_constraintHorizontal_chainStyle="spread"
+                motion:layout_constraintStart_toStartOf="parent"
+                motion:layout_constraintTop_toTopOf="parent" />
+
+        <Constraint
+                android:id="@+id/view2"
+                android:layout_width="@dimen/quick_setting_icon_width_start"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:visibility="visible"
+                motion:layout_constraintEnd_toStartOf="@+id/view3"
+                motion:layout_constraintStart_toEndOf="@+id/view1"
+                motion:layout_constraintTop_toTopOf="parent" />
+
+        <Constraint
+                android:id="@+id/view3"
+                android:layout_width="@dimen/quick_setting_icon_width_start"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:visibility="visible"
+                motion:layout_constraintEnd_toStartOf="@+id/view4"
+                motion:layout_constraintStart_toEndOf="@+id/view2"
+                motion:layout_constraintTop_toTopOf="parent" />
+
+        <Constraint
+                android:id="@+id/view4"
+                android:layout_width="@dimen/quick_setting_icon_width_start"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:visibility="visible"
+                motion:layout_constraintEnd_toStartOf="@+id/view5"
+                motion:layout_constraintStart_toEndOf="@+id/view3"
+                motion:layout_constraintTop_toTopOf="parent" />
+
+        <!-- Row 2 -->
+
+        <Constraint
+                android:id="@+id/view5"
+                android:layout_width="@dimen/quick_setting_icon_width_start"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:visibility="visible"
+                motion:layout_constraintEnd_toStartOf="@+id/view6"
+                motion:layout_constraintStart_toEndOf="@+id/view4"
+                motion:layout_constraintTop_toTopOf="parent" />
+
+        <Constraint
+                android:id="@+id/view6"
+                android:layout_width="@dimen/quick_setting_icon_width_start"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:visibility="visible"
+                motion:layout_constraintEnd_toStartOf="@+id/view7"
+                motion:layout_constraintStart_toEndOf="@+id/view5"
+                motion:layout_constraintTop_toTopOf="parent" />
+
+        <Constraint
+                android:id="@+id/view7"
+                android:layout_width="@dimen/quick_setting_icon_width_start"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:visibility="visible"
+                motion:layout_constraintEnd_toStartOf="@+id/view8"
+                motion:layout_constraintStart_toEndOf="@+id/view6"
+                motion:layout_constraintTop_toTopOf="parent" />
+
+        <Constraint
+                android:id="@+id/view8"
+                android:layout_width="@dimen/quick_setting_icon_width_start"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:visibility="visible"
+                motion:layout_constraintEnd_toEndOf="parent"
+                motion:layout_constraintStart_toEndOf="@+id/view7"
+                motion:layout_constraintTop_toTopOf="parent" />
+
+        <!-- Row 3 -->
+
+        <Constraint
+                android:id="@+id/view9"
+                android:layout_width="@dimen/quick_setting_icon_width"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                motion:layout_constraintEnd_toStartOf="@+id/view10"
+                motion:layout_constraintHorizontal_chainStyle="spread"
+                motion:layout_constraintStart_toStartOf="parent"
+                motion:layout_constraintTop_toBottomOf="@+id/view5" />
+
+        <Constraint
+                android:id="@+id/view10"
+                android:layout_width="@dimen/quick_setting_icon_width"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                motion:layout_constraintEnd_toStartOf="@+id/view11"
+                motion:layout_constraintStart_toEndOf="@+id/view9"
+                motion:layout_constraintTop_toBottomOf="@+id/view5" />
+
+        <Constraint
+                android:id="@+id/view11"
+                android:layout_width="@dimen/quick_setting_icon_width"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                motion:layout_constraintEnd_toStartOf="@+id/view12"
+                motion:layout_constraintStart_toEndOf="@+id/view10"
+                motion:layout_constraintTop_toBottomOf="@+id/view5" />
+
+        <Constraint
+                android:id="@+id/view12"
+                android:layout_width="@dimen/quick_setting_icon_width"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                motion:layout_constraintEnd_toEndOf="parent"
+                motion:layout_constraintStart_toEndOf="@+id/view11"
+                motion:layout_constraintTop_toBottomOf="@+id/view5" />
+
+
+</ConstraintSet>
+
+<ConstraintSet android:id="@+id/end">
+        <!-- Row 1 -->
+        <Constraint
+                android:id="@+id/view1"
+                android:layout_width="@dimen/quick_setting_icon_width"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:visibility="visible"
+                motion:layout_constraintEnd_toStartOf="@+id/view2"
+                motion:layout_constraintHorizontal_chainStyle="spread"
+                motion:layout_constraintStart_toStartOf="parent"
+                motion:layout_constraintTop_toTopOf="parent" />
+
+        <Constraint
+                android:id="@+id/view2"
+                android:layout_width="@dimen/quick_setting_icon_width"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:visibility="visible"
+                motion:layout_constraintEnd_toStartOf="@+id/view3"
+                motion:layout_constraintStart_toEndOf="@+id/view1"
+                motion:layout_constraintTop_toTopOf="parent" />
+
+        <Constraint
+                android:id="@+id/view3"
+                android:layout_width="@dimen/quick_setting_icon_width"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:visibility="visible"
+                motion:layout_constraintEnd_toStartOf="@+id/view4"
+                motion:layout_constraintStart_toEndOf="@+id/view2"
+                motion:layout_constraintTop_toTopOf="parent" />
+
+        <Constraint
+                android:id="@+id/view4"
+                android:layout_width="@dimen/quick_setting_icon_width"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:visibility="visible"
+                motion:layout_constraintEnd_toEndOf="parent"
+                motion:layout_constraintStart_toEndOf="@+id/view3"
+                motion:layout_constraintTop_toTopOf="parent" />
+
+        <!-- Row 2 -->
+
+        <Constraint
+                android:id="@+id/view5"
+                android:layout_width="@dimen/quick_setting_icon_width"
+                android:layout_height="wrap_content"
+                android:visibility="visible"
+                motion:layout_constraintEnd_toStartOf="@+id/view6"
+                motion:layout_constraintStart_toStartOf="parent"
+                motion:layout_constraintTop_toBottomOf="@+id/view1" />
+
+        <Constraint
+                android:id="@+id/view6"
+                android:layout_width="@dimen/quick_setting_icon_width"
+                android:layout_height="wrap_content"
+                android:visibility="visible"
+                motion:layout_constraintEnd_toStartOf="@+id/view7"
+                motion:layout_constraintStart_toEndOf="@+id/view5"
+                motion:layout_constraintTop_toBottomOf="@+id/view1" />
+
+        <Constraint
+                android:id="@+id/view7"
+                android:layout_width="@dimen/quick_setting_icon_width"
+                android:layout_height="wrap_content"
+                android:visibility="visible"
+                motion:layout_constraintEnd_toStartOf="@+id/view8"
+                motion:layout_constraintStart_toEndOf="@+id/view6"
+                motion:layout_constraintTop_toBottomOf="@+id/view1" />
+
+        <Constraint
+                android:id="@+id/view8"
+                android:layout_width="@dimen/quick_setting_icon_width"
+                android:layout_height="wrap_content"
+                android:visibility="visible"
+                motion:layout_constraintEnd_toEndOf="parent"
+                motion:layout_constraintStart_toEndOf="@+id/view7"
+                motion:layout_constraintTop_toBottomOf="@+id/view1" />
+
+        <!-- Row 3 -->
+
+        <Constraint
+                android:id="@+id/view9"
+                android:layout_width="@dimen/quick_setting_icon_width"
+                android:layout_height="wrap_content"
+                android:visibility="visible"
+                motion:layout_constraintEnd_toStartOf="@+id/view10"
+                motion:layout_constraintHorizontal_chainStyle="spread"
+                motion:layout_constraintStart_toStartOf="parent"
+                motion:layout_constraintTop_toBottomOf="@+id/view5" />
+
+        <Constraint
+                android:id="@+id/view10"
+                android:layout_width="@dimen/quick_setting_icon_width"
+                android:layout_height="wrap_content"
+                android:visibility="visible"
+                motion:layout_constraintEnd_toStartOf="@+id/view11"
+                motion:layout_constraintStart_toEndOf="@+id/view9"
+                motion:layout_constraintTop_toBottomOf="@+id/view5" />
+
+        <Constraint
+                android:id="@+id/view11"
+                android:layout_width="@dimen/quick_setting_icon_width"
+                android:layout_height="wrap_content"
+                android:visibility="visible"
+                motion:layout_constraintEnd_toStartOf="@+id/view12"
+                motion:layout_constraintStart_toEndOf="@+id/view10"
+                motion:layout_constraintTop_toBottomOf="@+id/view5" />
+
+        <Constraint
+                android:id="@+id/view12"
+                android:layout_width="@dimen/quick_setting_icon_width"
+                android:layout_height="wrap_content"
+                android:visibility="visible"
+                motion:layout_constraintEnd_toEndOf="parent"
+                motion:layout_constraintStart_toEndOf="@+id/view11"
+                motion:layout_constraintTop_toBottomOf="@+id/view5" />
+
+</ConstraintSet>
+</MotionScene>
+```
 scene_quick_setting.xml
 
 상하로 터치할 것이므로 OnSwipe 방향을 dragDown 으로 하고, constraintSetStart 와 constraintSetEnd 를 설정해주었습니다.
@@ -1044,19 +1048,19 @@ ConstraintSet 의 end 에는 3행 4열로 아이콘을 열거하고 모두 보�
 좀 더 Material 스러운 애니메이션을 위해 KeyFrame 을 삽입했습니다.
 
 위 KeyFrame 설정을 간단히 설명하면, 2행의 아이콘들은 framePosition 50 에 아래와 같은 속성을 주었습니다.
-
+```
     motion:keyPositionType=”deltaRelative”
     motion:percentX=”0"
     motion:percentY=”1"
-
+```
 애니메이션의 50%인 시점에 X 위치는 start 상태가 되도록 하고 Y위치는 end 상태가 되도록 합니다. (아이콘들이 50% 까지는 우측으로만 이동합니다.)
 
 3행의 아이콘들은 framePosition 50 에 아래와 같은 속성을 주었습니다.
-
+```
     motion:keyPositionType=”deltaRelative”
     motion:percentX=”1"
     motion:sizePercent=”1"
-
+```
 애니메이션의 50%인 시점에 X 위치는 end 상태가 되도록 하고 크기도 end 상태가 되도록 합니다. (아이콘들이 50% 까지는 위로만 움직이며 크기도 변화하지 않습니다.)
 
 3행에 아이콘에는 추가적으로 알파 애니메이션을 주었습니다. KeyAttribute 를 사용해서 framePosition 70 에 alpha 값을 0으로 설정해서 애니메이션의 70%인 지점에서 아이콘이 완전히 보이지 않도록 설정했습니다.
@@ -1066,9 +1070,8 @@ ConstraintSet 의 end 에는 3행 4열로 아이콘을 열거하고 모두 보�
 지금까지 MotionLayout 을 가볍게 살펴보았습니다. 비록 지금은 Beta 버전이기에 실제 서비스에 사용하기에는 조금 위험할 수도 있으나, 이렇게 간단히 인터랙션 애니메이션을 구현할 수 있다는 점에서 빨리 정식 빌드가 나오길 기대하고 있습니다.
 
 **예제 GitHub**
-[https://github.com/april21dev/motion_layout_example](https://github.com/april21dev/motion_layout_example)
+- [https://github.com/april21dev/motion_layout_example](https://github.com/april21dev/motion_layout_example)
 
 **References**
-[https://developer.android.com/reference/android/support/constraint/motion/MotionLayout](https://developer.android.com/reference/android/support/constraint/motion/MotionLayout)
-
-[https://medium.com/google-developers/introduction-to-motionlayout-part-i-29208674b10d](https://medium.com/google-developers/introduction-to-motionlayout-part-i-29208674b10d)
+- [https://developer.android.com/reference/android/support/constraint/motion/MotionLayout](https://developer.android.com/reference/android/support/constraint/motion/MotionLayout)
+- [https://medium.com/google-developers/introduction-to-motionlayout-part-i-29208674b10d](https://medium.com/google-developers/introduction-to-motionlayout-part-i-29208674b10d)
