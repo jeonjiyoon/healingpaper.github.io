@@ -33,13 +33,13 @@ author: Jane Jeon
 
         → 폰트 사이즈, 두께, 컬러별 스타일을 만들고 Align별로 정리합니다.
 
-        ![Untitled/Untitled.png](Untitled/Untitled.png)
+        ![img0](/assets/images/jane/Maximize-reusability-with-component-design/img0.png)
 
-        ![Untitled/Untitled%201.png](Untitled/Untitled%201.png)
+        ![img1](/assets/images/jane/Maximize-reusability-with-component-design/img1.png)
 
         지정해둔 타이포시스템은 Runner를 활용해 바로바로 적용하면 작업 시간을 빠르게 단축할 수 있습니다.
 
-        [Untitled/__2019-09-16__8.37.25.mov](Untitled/__2019-09-16__8.37.25.mov)
+        ![mov0](/assets/images/jane/Maximize-reusability-with-component-design/mov0.mov)
 
         `예시) 스케치 러너 동작`
 
@@ -89,7 +89,7 @@ author: Jane Jeon
 
     (이러한 밑작업은 단순작업에 대한 시간 단축도 있지만, Datach 후 텍스트 수정 및 디자인 작업을 하고 나면 추후 컴포넌트의 디자인이 변경되었을 때 기존 컴포넌트의 추적이 어려워지는 것을 막아주기도 합니다.)
 
-    [Untitled/__2019-09-16__8.51.49.mov](Untitled/__2019-09-16__8.51.49.mov)
+    ![mov1](/assets/images/jane/Maximize-reusability-with-component-design/mov1.mov)
 
     `예시) 패딩 적용 후 가변 영역 변하는 이미지 삽입`
 
@@ -101,7 +101,7 @@ author: Jane Jeon
 
     - 리스트에서 굉장히 자주 사용되는 요소인데요, 가변과 가변의 만남이므로 오버라이드 후에도 간격이 유지될 수 있게 미리 대응해둡니다.
 
-        [Untitled/__2019-09-16__8.56.44.mov](Untitled/__2019-09-16__8.56.44.mov)
+        ![mov2](/assets/images/jane/Maximize-reusability-with-component-design/mov2.mov)
 
         예시) 가변영역에 대한 대응 후 자동으로 변경되는 모습
 
@@ -136,7 +136,7 @@ author: Jane Jeon
 
     이제 컨텐츠를 바꿔주면 됩니다. 앞서서 앨리먼트, 컴포넌트에 가변영역에 대한 고려가 충분히 되어있다면 대부분은 디자인은 오버라이드만으로 작업이 가능해집니다.
 
-    [Untitled/__2019-09-19__5.24.42.mov](Untitled/__2019-09-19__5.24.42.mov)
+    ![mov3](/assets/images/jane/Maximize-reusability-with-component-design/mov3.mov)
 
     `예시) 공통페이지 컴포넌트 가져다 쌓는 이미지 보여주기`
 
@@ -158,7 +158,7 @@ author: Jane Jeon
 
     그리고 컴포넌트 별로 섹션을 나누어 공유하면 개발자가 보기도 훨씬 편해집니다.👍
 
-    ![Untitled/Untitled%202.png](Untitled/Untitled%202.png)
+    ![img2](/assets/images/jane/Maximize-reusability-with-component-design/img2.png)
 
     `예시) 섹션 나누어 올린 이미지`
 
