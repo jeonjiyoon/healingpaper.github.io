@@ -39,7 +39,7 @@ author: Jane Jeon
 
         지정해둔 타이포시스템은 Runner를 활용해 바로바로 적용하면 작업 시간을 빠르게 단축할 수 있습니다.
 
-        ![mov0](/assets/images/jane/Maximize-reusability-with-component-design/mov0.mov)
+        ![mp4_0](/assets/images/jane/Maximize-reusability-with-component-design/mp4_0.mp4)
 
         `예시) 스케치 러너 동작`
 
@@ -89,7 +89,7 @@ author: Jane Jeon
 
     (이러한 밑작업은 단순작업에 대한 시간 단축도 있지만, Datach 후 텍스트 수정 및 디자인 작업을 하고 나면 추후 컴포넌트의 디자인이 변경되었을 때 기존 컴포넌트의 추적이 어려워지는 것을 막아주기도 합니다.)
 
-    ![mov1](/assets/images/jane/Maximize-reusability-with-component-design/mov1.mov)
+    ![mp4_1](/assets/images/jane/Maximize-reusability-with-component-design/mp4_1.mp4)
 
     `예시) 패딩 적용 후 가변 영역 변하는 이미지 삽입`
 
@@ -101,7 +101,7 @@ author: Jane Jeon
 
     - 리스트에서 굉장히 자주 사용되는 요소인데요, 가변과 가변의 만남이므로 오버라이드 후에도 간격이 유지될 수 있게 미리 대응해둡니다.
 
-        ![mov2](/assets/images/jane/Maximize-reusability-with-component-design/mov2.mov)
+        ![mp4_2](/assets/images/jane/Maximize-reusability-with-component-design/mp4_2.mp4)
 
         예시) 가변영역에 대한 대응 후 자동으로 변경되는 모습
 
@@ -136,7 +136,7 @@ author: Jane Jeon
 
     이제 컨텐츠를 바꿔주면 됩니다. 앞서서 앨리먼트, 컴포넌트에 가변영역에 대한 고려가 충분히 되어있다면 대부분은 디자인은 오버라이드만으로 작업이 가능해집니다.
 
-    ![mov3](/assets/images/jane/Maximize-reusability-with-component-design/mov3.mov)
+    ![mp4_3](/assets/images/jane/Maximize-reusability-with-component-design/mp4_3.mp4)
 
     `예시) 공통페이지 컴포넌트 가져다 쌓는 이미지 보여주기`
 
