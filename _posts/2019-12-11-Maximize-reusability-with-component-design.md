@@ -8,10 +8,6 @@ author: Jane Jeon
 ---
 
 
-# 재사용성을 극대화하는 컴포넌트 디자인
-
-### 컴포넌트 디자인의 생성과 활용, 협업하기
-
 안녕하세요. 힐링페이퍼의 프로덕트 디자이너 Jane 입니다.
 
 강남언니 앱의 원활한 운영 관리를 위한 백오피스 시스템은 업무 효율성에 많은 영향을 미치는 중요한 프로덕트입니다. 그만큼 무수한 기능이 존재하기 때문에 디자인, 개발과정에서 공수가 많이 드는 편이기도 하죠. 이 때, 재사용성만 잘 고려가 되어도 디자인에 소모되는 반복작업이 줄어들 수 있습니다. 
@@ -21,6 +17,8 @@ author: Jane Jeon
 간단히 컴포넌트 디자인에 대해 설명하자면, 작은 단위의 레고블럭을 만드는 과정이라고 할 수 있는데요. 어디에 끼워넣어도 조립이 되는 레고처럼 `모듈화된 디자인`을 통해 일관되고 빠른 디자인이 가능하며, 여러 디자이너가 효율적으로 협업하는데에 기반을 마련해줍니다. *(매번 다른 사람이 레고블럭을 조립해도 결과물은 항상 레고인것처럼요!)*
 
 이번 글에서는 `재사용성을 극대화하는 컴포넌트 디자인`을 생성하고 활용하고 공유하는 과정에 대해 공유합니다. 아주 작은 단위인 앨리먼트부터 큰 컴포넌트까지 가변적인 상황을 고려한 디자인을 만들고, 개발자와 협업하는 과정에 대해 세세하게 이야기하는 시간이 될거에요. 
+
+
 
 ### 컴포넌트 만들기
 
@@ -43,7 +41,7 @@ author: Jane Jeon
         <source src="/assets/images/jane/Maximize-reusability-with-component-design/mp4_0.mp4" type="video/mp4">
     </video>
 
-        `예시) 스케치 러너 동작`
+
 
     - 컬러시스템 만들기
 
@@ -62,8 +60,6 @@ author: Jane Jeon
     - 5. Abstract 라이브러리화
 
         지난 번 글에서 언급한 Abstract의 Library 기능을 활용해 프로젝트에 파일을 링크시켜줍니다.
-
-        (자세한 내용은 "Abstract 활용 가이드"를 참고해주세요)
 
 - 2. 앨리먼트 만들기
 
@@ -95,7 +91,6 @@ author: Jane Jeon
         <source src="/assets/images/jane/Maximize-reusability-with-component-design/mp4_1.mp4" type="video/mp4">
     </video>
 
-    `예시) 패딩 적용 후 가변 영역 변하는 이미지 삽입`
 
 - 3. 컴포넌트 만들기
 
@@ -109,7 +104,6 @@ author: Jane Jeon
         <source src="/assets/images/jane/Maximize-reusability-with-component-design/mp4_2.mp4" type="video/mp4">
     </video>
 
-        예시) 가변영역에 대한 대응 후 자동으로 변경되는 모습
 
     - Input Style
 
@@ -146,9 +140,8 @@ author: Jane Jeon
         <source src="/assets/images/jane/Maximize-reusability-with-component-design/mp4_3.mp4" type="video/mp4">
     </video>
 
-    `예시) 공통페이지 컴포넌트 가져다 쌓는 이미지 보여주기`
 
-    깔끔한 레이어를 보니 마음이 평화로워지는군요🧘‍♀️🧘‍♂️
+    깔끔한 레이어를 보니 마음이 평화로워지는군요!
 
 ---
 
@@ -168,7 +161,6 @@ author: Jane Jeon
 
     ![img2](/assets/images/jane/Maximize-reusability-with-component-design/img2.png)
 
-    `예시) 섹션 나누어 올린 이미지`
 
 이렇게 Styleguide로 공유된 컴포넌트는 개발자의 손을 거쳐 기능까지 구현된 웹 컴포넌트로 개발됩니다.
 
